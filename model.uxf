@@ -205,7 +205,7 @@ Consumer
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
 Money
 --
-+ amount: double {Digits(10, 2), Pattern(regexp = "^\\€$")}
++ amount: double {Digits(10, 2), Pattern(regexp = "^\\€|(EUR)$")}
 + currentcy: String {NotBlank}
 
 bg=yellow</panel_attributes>
