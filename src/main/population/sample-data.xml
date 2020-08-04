@@ -396,5 +396,67 @@
 	<bean name="user01Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="user01UserAccount"/>
 	</bean>
+	
+	<!-- Investors -->
+	
+	<bean name="investor01UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor01"/>	
+		<property name="password" value="investor01"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="One" />
+				<property name="email" value="investor01@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor01Investor"/>
+				<ref bean="investor01Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="investor01Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="Mclaren, Inc."/>
+		<property name="activitySector" value="Sport Cars"/>
+		<property name="profile" value="CEO"/>
+		<property name="userAccount" ref="investor01UserAccount"/>
+	</bean>
+	
+	<bean name="investor01Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor01UserAccount"/>
+	</bean>
+	
+	<bean name="investor02UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor02"/>	
+		<property name="password" value="investor02"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Two" />
+				<property name="email" value="investor02@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor02Investor"/>
+				<ref bean="investor02Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="investor02Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="Aston Martin, Inc."/>
+		<property name="activitySector" value="Sport Cars"/>
+		<property name="profile" value="Designer"/>
+		<property name="userAccount" ref="investor02UserAccount"/>
+	</bean>
+	
+	<bean name="investor02Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor02UserAccount"/>
+	</bean>
 
 </beans>
