@@ -396,5 +396,38 @@
 	<bean name="user01Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="user01UserAccount"/>
 	</bean>
+	
+	<!-- Entrepreneurs -->
+	
+	<bean name="entrepreneur01UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur01"/>	
+		<property name="password" value="entrepreneur01"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur" />
+				<property name="surname" value="One" />
+				<property name="email" value="entrepreneur01@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur01Entrepreneur"/>
+				<ref bean="entrepreneur01Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="entrepreneur01Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneur01UserAccount"/>
+	</bean>
+	
+	<bean name="entrepreneur01Entrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="startUpName" value="Freeline" />
+		<property name="sector" value="Videogames" />
+		<property name="qualificationRecord" value="Excellent!" />
+		<property name="skillsRecord" value="C++, C#, Unreal Engine 5" />
+		<property name="userAccount" ref="entrepreneur01UserAccount"/>
+	</bean>
 
 </beans>

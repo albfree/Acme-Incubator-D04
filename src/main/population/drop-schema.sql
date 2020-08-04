@@ -15,6 +15,10 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `entrepreneur` 
+       drop 
+       foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
@@ -30,6 +34,8 @@
     drop table if exists `consumer`;
 
     drop table if exists `customization`;
+
+    drop table if exists `entrepreneur`;
 
     drop table if exists `escobar_bulletin`;
 

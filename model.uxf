@@ -18,13 +18,13 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>847</x>
+      <x>924</x>
       <y>319</y>
-      <w>110</w>
-      <h>121</h>
+      <w>99</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;70.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -64,11 +64,11 @@ bg=blue</panel_attributes>
     <coordinates>
       <x>924</x>
       <y>319</y>
-      <w>110</w>
-      <h>121</h>
+      <w>242</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -167,8 +167,8 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>418</y>
+      <x>836</x>
+      <y>462</y>
       <w>220</w>
       <h>99</h>
     </coordinates>
@@ -182,8 +182,8 @@ Provider
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>946</x>
-      <y>418</y>
+      <x>1078</x>
+      <y>462</y>
       <w>231</w>
       <h>99</h>
     </coordinates>
@@ -505,5 +505,33 @@ ToolRecord
 + indication: String {NotBlank, Pattern(regexp = "^(open-source|closed-source)$")}
 + starsRate: Integer {MIN(-5), MAX(5)}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>517</x>
+      <y>462</y>
+      <w>286</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Entrepreneur
+--
++ startUpName: String {NotBlank}
++ sector: String {NotBlank}
++ qualificationRecord: String {NotBlank}
++ skillsRecord: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>319</y>
+      <w>330</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;130.0</additional_attributes>
   </element>
 </diagram>
