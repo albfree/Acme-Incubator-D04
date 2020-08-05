@@ -11,6 +11,10 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
+    alter table `bookkeeper` 
+       drop 
+       foreign key FK_krvjp9eaqyapewl2igugbo9o8;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
@@ -24,6 +28,8 @@
     drop table if exists `anonymous`;
 
     drop table if exists `authenticated`;
+
+    drop table if exists `bookkeeper`;
 
     drop table if exists `challenge`;
 

@@ -20,6 +20,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `bookkeeper` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm_name` varchar(255),
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `challenge` (
        `id` integer not null,
         `version` integer not null,
@@ -216,6 +225,11 @@
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `bookkeeper` 
+       add constraint FK_krvjp9eaqyapewl2igugbo9o8 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
