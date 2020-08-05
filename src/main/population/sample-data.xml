@@ -373,6 +373,35 @@
 		<property name="starsRate"><null/></property>
 	</bean>
 	
+	<!-- Activity -->
+	
+	<bean id="activity01" class="acme.entities.investmentRecords.Activity">
+		<property name="title" value="Activity 01"/>
+		<property name="startDateTime" value="2020/08/2 00:00"/>
+		<property name="endDateTime" value="2020/08/10 23:59"/>
+		<property name="budget">
+			<ref bean="money01"/>
+		</property>
+	</bean>
+
+	<bean id="activity02" class="acme.entities.investmentRecords.Activity">
+		<property name="title" value="Activity 02"/>
+		<property name="startDateTime" value="2020/07/21 00:00"/>
+		<property name="endDateTime" value="2020/08/1 23:59"/>
+		<property name="budget">
+			<ref bean="money02"/>
+		</property>
+	</bean>
+
+	<bean id="activity03" class="acme.entities.investmentRecords.Activity">
+		<property name="title" value="Activity 03"/>
+		<property name="startDateTime" value="2020/08/4 00:00"/>
+		<property name="endDateTime" value="2020/08/17 23:59"/>
+		<property name="budget">
+			<ref bean="money03"/>
+		</property>
+	</bean>
+	
 	<!-- Users -->
 	
 	<bean name="user01UserAccount" class="acme.framework.entities.UserAccount">
@@ -428,6 +457,68 @@
 		<property name="qualificationRecord" value="Excellent!" />
 		<property name="skillsRecord" value="C++, C#, Unreal Engine 5" />
 		<property name="userAccount" ref="entrepreneur01UserAccount"/>
+	</bean>
+	
+	<!-- Investors -->
+	
+	<bean name="investor01UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor01"/>	
+		<property name="password" value="investor01"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="One" />
+				<property name="email" value="investor01@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor01Investor"/>
+				<ref bean="investor01Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="investor01Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="Mclaren, Inc."/>
+		<property name="activitySector" value="Sport Cars"/>
+		<property name="profile" value="CEO"/>
+		<property name="userAccount" ref="investor01UserAccount"/>
+	</bean>
+	
+	<bean name="investor01Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor01UserAccount"/>
+	</bean>
+	
+	<bean name="investor02UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor02"/>	
+		<property name="password" value="investor02"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Two" />
+				<property name="email" value="investor02@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor02Investor"/>
+				<ref bean="investor02Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="investor02Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="Aston Martin, Inc."/>
+		<property name="activitySector" value="Sport Cars"/>
+		<property name="profile" value="Designer"/>
+		<property name="userAccount" ref="investor02UserAccount"/>
+	</bean>
+	
+	<bean name="investor02Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
 
 </beans>

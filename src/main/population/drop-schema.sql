@@ -23,6 +23,8 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+    drop table if exists `activity`;
+
     drop table if exists `administrator`;
 
     drop table if exists `anonymous`;
@@ -44,6 +46,8 @@
     drop table if exists `horrillo_bulletin`;
 
     drop table if exists `inquiry`;
+
+    drop table if exists `investor`;
 
     drop table if exists `lobato_bulletin`;
 
