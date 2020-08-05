@@ -533,4 +533,21 @@ Investor
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;100.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>152</y>
+      <w>296</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Activity
+--
++ title: String {NotBlank}
++ startDateTime: Date {NotNull, Temporal(TIMESTAMP)}
++ endDateTime: Date {NotNull, Temporal(TIMESTAMP)}
++ budget: Money {NotNull, Valid}</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
