@@ -382,6 +382,7 @@
 		<property name="budget">
 			<ref bean="money01"/>
 		</property>
+		<property name="investment" ref="investmentRound01" />
 	</bean>
 
 	<bean id="activity02" class="acme.entities.investmentRecords.Activity">
@@ -391,6 +392,7 @@
 		<property name="budget">
 			<ref bean="money02"/>
 		</property>
+		<property name="investment" ref="investmentRound01" />
 	</bean>
 
 	<bean id="activity03" class="acme.entities.investmentRecords.Activity">
@@ -400,6 +402,29 @@
 		<property name="budget">
 			<ref bean="money03"/>
 		</property>
+		<property name="investment" ref="investmentRound01" />
+	</bean>
+	
+	<!-- Investment rounds -->
+	
+	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="VID-20-000001" />
+		<property name="creationDate" value="2020/08/06 16:00" />
+		<property name="kindOfRound" value="ANGEL" />
+		<property name="title" value="God of War II" />
+		<property name="description" value="La secuela del mejor videojuego de la historia." />
+		<property name="amount">
+			<ref bean="money01"/>
+		</property>
+		<property name="optionalLink" value="https://www.youtube.com" />
+		<property name="workProgramme">
+			<list>
+				<ref bean="activity01" />
+				<ref bean="activity02" />
+				<ref bean="activity03" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
 	</bean>
 	
 	<!-- Users -->
@@ -457,6 +482,37 @@
 		<property name="qualificationRecord" value="Excellent!" />
 		<property name="skillsRecord" value="C++, C#, Unreal Engine 5" />
 		<property name="userAccount" ref="entrepreneur01UserAccount"/>
+	</bean>
+	
+	<bean name="entrepreneur02UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur02"/>	
+		<property name="password" value="entrepreneur02"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur" />
+				<property name="surname" value="Two" />
+				<property name="email" value="entrepreneur02@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur02Entrepreneur"/>
+				<ref bean="entrepreneur02Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="entrepreneur02Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneur02UserAccount"/>
+	</bean>
+	
+	<bean name="entrepreneur02Entrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="startUpName" value="Cars Marx" />
+		<property name="sector" value="Cars" />
+		<property name="qualificationRecord" value="Perfect!" />
+		<property name="skillsRecord" value="Build cars" />
+		<property name="userAccount" ref="entrepreneur02UserAccount"/>
 	</bean>
 	
 	<!-- Investors -->

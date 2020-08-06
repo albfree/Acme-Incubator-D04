@@ -18,6 +18,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.investmentRecords.Activity;
@@ -62,6 +64,7 @@ public class InvestmentRound extends DomainEntity {
 
 	@NotNull
 	@OneToMany(mappedBy = "investment", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<@Valid Activity>	workProgramme;
 
 	@ManyToOne(optional = false)
