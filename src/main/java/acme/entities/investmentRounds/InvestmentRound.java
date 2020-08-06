@@ -61,7 +61,7 @@ public class InvestmentRound extends DomainEntity {
 	private String						optionalLink;
 
 	@NotNull
-	@OneToMany(mappedBy = "investor", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "investment", cascade = CascadeType.ALL)
 	private Collection<@Valid Activity>	workProgramme;
 
 	@ManyToOne(optional = false)

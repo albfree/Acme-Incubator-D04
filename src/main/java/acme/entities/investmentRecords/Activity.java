@@ -50,6 +50,6 @@ public class Activity extends DomainEntity {
 	@ManyToOne(optional = false)
 	@NotNull
 	@Valid
-	private InvestmentRound		investor;
+	private InvestmentRound		investment;
 
 }
