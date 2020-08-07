@@ -1,5 +1,5 @@
 
-package acme.entities.investmentRecords;
+package acme.entities.activities;
 
 import java.util.Date;
 

@@ -22,7 +22,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.investmentRecords.Activity;
+import acme.entities.activities.Activity;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -73,17 +73,16 @@ public class InvestmentRound extends DomainEntity {
 
 
 	@Transient
-	public boolean sumUp() {
+	public boolean sumActivitiesBudgets() {
 		Double sum = 0.;
 		Boolean result = false;
 
 		for (Activity act : this.workProgramme) {
 			sum += act.getBudget().getAmount();
+		}
 
-			if (sum == this.amount.getAmount()) {
-				result = true;
-				break;
-			}
+		if (sum == this.amount.getAmount()) {
+			result = true;
 		}
 
 		return result;

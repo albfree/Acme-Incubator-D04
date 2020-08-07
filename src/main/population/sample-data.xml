@@ -375,7 +375,7 @@
 	
 	<!-- Activity -->
 	
-	<bean id="activity01" class="acme.entities.investmentRecords.Activity">
+	<bean id="activity01" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 01"/>
 		<property name="startDateTime" value="2020/08/2 00:00"/>
 		<property name="endDateTime" value="2020/08/10 23:59"/>
@@ -385,7 +385,7 @@
 		<property name="investment" ref="investmentRound01" />
 	</bean>
 
-	<bean id="activity02" class="acme.entities.investmentRecords.Activity">
+	<bean id="activity02" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 02"/>
 		<property name="startDateTime" value="2020/07/21 00:00"/>
 		<property name="endDateTime" value="2020/08/1 23:59"/>
@@ -395,7 +395,7 @@
 		<property name="investment" ref="investmentRound01" />
 	</bean>
 
-	<bean id="activity03" class="acme.entities.investmentRecords.Activity">
+	<bean id="activity03" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 03"/>
 		<property name="startDateTime" value="2020/08/4 00:00"/>
 		<property name="endDateTime" value="2020/08/17 23:59"/>
