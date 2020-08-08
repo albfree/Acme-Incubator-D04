@@ -402,7 +402,27 @@
 		<property name="budget">
 			<ref bean="money03"/>
 		</property>
-		<property name="investment" ref="investmentRound01" />
+		<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity04" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 04"/>
+		<property name="startDateTime" value="2020/08/10 00:00"/>
+		<property name="endDateTime" value="2020/08/17 23:59"/>
+		<property name="budget">
+			<ref bean="money01"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity05" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 05"/>
+		<property name="startDateTime" value="2020/08/12 00:00"/>
+		<property name="endDateTime" value="2020/08/19 23:59"/>
+		<property name="budget">
+			<ref bean="money02"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
 	</bean>
 	
 	<!-- Investment rounds -->
@@ -414,14 +434,33 @@
 		<property name="title" value="God of War II" />
 		<property name="description" value="La secuela del mejor videojuego de la historia." />
 		<property name="amount">
-			<ref bean="money01"/>
+			<ref bean="money03"/>
 		</property>
 		<property name="optionalLink" value="https://www.youtube.com" />
 		<property name="workProgramme">
 			<list>
 				<ref bean="activity01" />
 				<ref bean="activity02" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
+	</bean>
+	
+	<bean name="investmentRound02" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="VID-20-000002" />
+		<property name="creationDate" value="2020/08/07 17:00" />
+		<property name="kindOfRound" value="SERIES-A" />
+		<property name="title" value="Red Dead Redemption 3" />
+		<property name="description" value="La secuela de la secuela del mejor videojuego de la historia." />
+		<property name="amount">
+			<ref bean="money05"/>
+		</property>
+		<property name="optionalLink" value="https://www.youtube.com" />
+		<property name="workProgramme">
+			<list>
 				<ref bean="activity03" />
+				<ref bean="activity04" />
+				<ref bean="activity05" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />

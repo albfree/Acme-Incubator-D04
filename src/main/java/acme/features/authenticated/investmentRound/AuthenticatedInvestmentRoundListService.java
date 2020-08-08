@@ -32,7 +32,7 @@ public class AuthenticatedInvestmentRoundListService implements AbstractListServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creationDate", "title", "amount");
+		request.unbind(entity, model, "ticker", "title", "amount");
 
 	}
 
@@ -42,6 +42,32 @@ public class AuthenticatedInvestmentRoundListService implements AbstractListServ
 
 		Collection<InvestmentRound> result;
 		result = this.repository.findActiveInvestmentRounds();
+
+		Collection<InvestmentRound> col = result;
+
+		for (InvestmentRound iv : col) {
+			if (iv.sumActivitiesBudgets() == false) {
+				result.remove(iv);
+				//				for (InvestmentRound iv2 : result) {
+				//					if (iv.getTicker().equals(iv2.getTicker())) {
+				//						result.remove(iv2);
+				//						break;
+				//					}
+				//				}
+			}
+		}
+
+		//		Double sum = 0.;
+		//
+		//		for (InvestmentRound iv : result) {
+		//			for (Activity act : iv.getWorkProgramme()) {
+		//				sum += act.getBudget().getAmount();
+		//			}
+		//
+		//			if (sum != iv.getAmount().getAmount()) {
+		//				result.remove(iv);
+		//			}
+		//		}
 
 		return result;
 	}

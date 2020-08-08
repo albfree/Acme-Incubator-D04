@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.investment-round.list.label.creation-date = Creation date
+authenticated.investment-round.list.label.ticker = Ticker
 authenticated.investment-round.list.label.title = Title
 authenticated.investment-round.list.label.amount = Amount
 
