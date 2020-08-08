@@ -18,13 +18,13 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>319</y>
-      <w>99</w>
-      <h>165</h>
+      <x>680</x>
+      <y>232</y>
+      <w>24</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -62,13 +62,13 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>319</y>
-      <w>242</w>
-      <h>165</h>
+      <x>696</x>
+      <y>232</y>
+      <w>280</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;330.0;230.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -167,8 +167,8 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>836</x>
-      <y>462</y>
+      <x>608</x>
+      <y>416</y>
       <w>220</w>
       <h>99</h>
     </coordinates>
@@ -182,8 +182,8 @@ Provider
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1078</x>
-      <y>462</y>
+      <x>848</x>
+      <y>416</y>
       <w>231</w>
       <h>99</h>
     </coordinates>
@@ -199,7 +199,7 @@ Consumer
     <coordinates>
       <x>16</x>
       <y>320</y>
-      <w>296</w>
+      <w>336</w>
       <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
@@ -370,7 +370,7 @@ GuerreroBulletin
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>464</y>
+      <y>632</y>
       <w>280</w>
       <h>136</h>
     </coordinates>
@@ -390,7 +390,7 @@ Notice
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>616</y>
+      <y>784</y>
       <w>280</w>
       <h>160</h>
     </coordinates>
@@ -412,7 +412,7 @@ Challenge
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>792</y>
+      <y>960</y>
       <w>280</w>
       <h>96</h>
     </coordinates>
@@ -428,7 +428,7 @@ Customization
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>904</y>
+      <y>1072</y>
       <w>296</w>
       <h>144</h>
     </coordinates>
@@ -448,7 +448,7 @@ Overture
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>1064</y>
+      <y>1232</y>
       <w>296</w>
       <h>144</h>
     </coordinates>
@@ -468,7 +468,7 @@ Inquiry
     <id>UMLClass</id>
     <coordinates>
       <x>648</x>
-      <y>464</y>
+      <y>632</y>
       <w>424</w>
       <h>152</h>
     </coordinates>
@@ -489,7 +489,7 @@ TechnologyRecord
     <id>UMLClass</id>
     <coordinates>
       <x>648</x>
-      <y>632</y>
+      <y>800</y>
       <w>424</w>
       <h>152</h>
     </coordinates>
@@ -509,8 +509,8 @@ ToolRecord
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>517</x>
-      <y>462</y>
+      <x>304</x>
+      <y>400</y>
       <w>286</w>
       <h>132</h>
     </coordinates>
@@ -526,12 +526,34 @@ Entrepreneur
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>627</x>
-      <y>319</y>
-      <w>330</w>
-      <h>165</h>
+      <x>440</x>
+      <y>232</y>
+      <w>256</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>280.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>300.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>968</y>
+      <w>424</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+InvestmentRound
+--
++ ticker: String {NotBlank, Column(unique = true, Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$"))}
++ creationDate: Date {Temporal(TIMESTAMP), Past}
++ kindOfRound: String {NotBlank, Pattern(regexp = "^SEED|ANGEL|SERIES-A|SERIES-B|SERIES-C|BRIDGE$")}
++ title: String {NotBlank}
++ description: String {NotBlank}
++ amount: Money {Valid, NotNull}
++ optionalLink: String {URL}
++ workProgramme: Collection&lt;Activity&gt; {NotNull, OneToMany(mappedBy = "investment", cascade = CascadeType.ALL), LazyCollection(LazyCollectionOption.FALSE)}
++ entrepreneur: Entrepreneur {ManyToOne(optional = false), Valid}</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
