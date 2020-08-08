@@ -1,4 +1,8 @@
 
+    alter table `activity` 
+       drop 
+       foreign key `FKev7kvr6qe9wut886e6ju0o9gs`;
+
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -14,6 +18,14 @@
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+
+    alter table `entrepreneur` 
+       drop 
+       foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
+
+    alter table `investment_round` 
+       drop 
+       foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
 
     alter table `investor` 
        drop 
@@ -37,6 +49,8 @@
 
     drop table if exists `customization`;
 
+    drop table if exists `entrepreneur`;
+
     drop table if exists `escobar_bulletin`;
 
     drop table if exists `guerrero_bulletin`;
@@ -44,6 +58,8 @@
     drop table if exists `horrillo_bulletin`;
 
     drop table if exists `inquiry`;
+
+    drop table if exists `investment_round`;
 
     drop table if exists `investor`;
 

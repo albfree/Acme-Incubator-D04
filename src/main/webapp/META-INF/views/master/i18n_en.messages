@@ -82,6 +82,7 @@ master.menu.administrator.technology-record.create = Create Technology Record
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
+master.menu.authenticated.investment-round.list = Investment round's list
 master.menu.authenticated.notice.list = Notice's list
 master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.overture.list = List of overtures

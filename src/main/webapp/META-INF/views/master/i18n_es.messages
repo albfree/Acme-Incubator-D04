@@ -82,6 +82,7 @@ master.menu.administrator.technology-record.create = Crear Registro de Tecnologi
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
+master.menu.authenticated.investment-round.list = Lista de rondas de inversión
 master.menu.authenticated.notice.list = Lista de avisos
 master.menu.authenticated.challenge = Desafíos
 master.menu.authenticated.overture.list = Lista de propuestas
