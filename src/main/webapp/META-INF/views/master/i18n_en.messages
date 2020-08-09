@@ -82,7 +82,7 @@ master.menu.administrator.technology-record.create = Create Technology Record
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.investment-round.list = Investment round's list
+master.menu.authenticated.investment-round.list = Investment rounds' list
 master.menu.authenticated.notice.list = Notice's list
 master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.overture.list = List of overtures
@@ -97,6 +97,11 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.entrepreneur ###################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.investment-round.list-mine = My investment rounds' list
 
 # master.menu.user-account ####################################################
 

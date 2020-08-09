@@ -81,7 +81,7 @@ public class InvestmentRound extends DomainEntity {
 			sum += act.getBudget().getAmount();
 		}
 
-		if (sum == this.amount.getAmount()) {
+		if (sum.equals(this.amount.getAmount())) {
 			result = true;
 		}
 

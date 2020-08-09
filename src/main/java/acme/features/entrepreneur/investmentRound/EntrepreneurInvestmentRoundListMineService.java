@@ -1,23 +1,23 @@
 
-package acme.features.authenticated.investmentRound;
+package acme.features.entrepreneur.investmentRound;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedInvestmentRoundListService implements AbstractListService<Authenticated, InvestmentRound> {
+public class EntrepreneurInvestmentRoundListMineService implements AbstractListService<Entrepreneur, InvestmentRound> {
 
 	@Autowired
-	private AuthenticatedInvestmentRoundRepository repository;
+	private EntrepreneurInvestmentRoundRepository repository;
 
 
 	@Override
@@ -41,15 +41,11 @@ public class AuthenticatedInvestmentRoundListService implements AbstractListServ
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		Collection<InvestmentRound> result = new ArrayList<>();
+		Collection<InvestmentRound> result;
+		Principal principal;
 
-		Collection<InvestmentRound> temporalResult = this.repository.findActiveInvestmentRounds();
-
-		for (InvestmentRound iv : temporalResult) {
-			if (iv.sumActivitiesBudgets() == true) {
-				result.add(iv);
-			}
-		}
+		principal = request.getPrincipal();
+		result = this.repository.findInvestmentRoundsByEntrepreneurId(principal.getActiveRoleId());
 
 		return result;
 	}
