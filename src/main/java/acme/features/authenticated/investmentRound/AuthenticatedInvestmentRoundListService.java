@@ -1,6 +1,7 @@
 
 package acme.features.authenticated.investmentRound;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,34 +41,15 @@ public class AuthenticatedInvestmentRoundListService implements AbstractListServ
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		Collection<InvestmentRound> result;
-		result = this.repository.findActiveInvestmentRounds();
+		Collection<InvestmentRound> result = new ArrayList<>();
 
-		Collection<InvestmentRound> col = result;
+		Collection<InvestmentRound> temporalResult = this.repository.findActiveInvestmentRounds();
 
-		for (InvestmentRound iv : col) {
-			if (iv.sumActivitiesBudgets() == false) {
-				result.remove(iv);
-				//				for (InvestmentRound iv2 : result) {
-				//					if (iv.getTicker().equals(iv2.getTicker())) {
-				//						result.remove(iv2);
-				//						break;
-				//					}
-				//				}
+		for (InvestmentRound iv : temporalResult) {
+			if (iv.sumActivitiesBudgets() == true) {
+				result.add(iv);
 			}
 		}
-
-		//		Double sum = 0.;
-		//
-		//		for (InvestmentRound iv : result) {
-		//			for (Activity act : iv.getWorkProgramme()) {
-		//				sum += act.getBudget().getAmount();
-		//			}
-		//
-		//			if (sum != iv.getAmount().getAmount()) {
-		//				result.remove(iv);
-		//			}
-		//		}
 
 		return result;
 	}
