@@ -88,6 +88,11 @@ master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.overture.list = List of overtures
 master.menu.authenticated.inquiry.list = List of inquiries
 
+# master.menu.investor ###################################################
+
+master.menu.investor = Investor
+master.menu.investor.application.list-mine = My applications
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider

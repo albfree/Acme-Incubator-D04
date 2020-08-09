@@ -88,6 +88,11 @@ master.menu.authenticated.challenge = Desafíos
 master.menu.authenticated.overture.list = Lista de propuestas
 master.menu.authenticated.inquiry.list = Lista de consultas
 
+# master.menu.investor ###################################################
+
+master.menu.investor = Inversor
+master.menu.investor.application.list-mine = Mis solicitudes
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

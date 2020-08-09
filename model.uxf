@@ -600,4 +600,23 @@ Activity
 + budget: Money {NotNull, Valid}</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>1296</y>
+      <w>520</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Application
+--
++ ticker: String {NotBlank, Column(unique = true), Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")}
++ creationDate: Date {Past, Temporal(TIMESTAMP)}
++ statement: String {NotBlank}
++ investmentOffer: Money {NotNull, Valid}
++ investment: InvestmentRound {ManyToOne(optional = false), NotNull, Valid}
++ investor: Investor {ManyToOne(optional = false), NotNull, Valid}</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

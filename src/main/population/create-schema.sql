@@ -25,6 +25,19 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `creation_date` datetime(6),
+        `investment_offer_amount` double precision,
+        `investment_offer_currency` varchar(255),
+        `statement` varchar(255),
+        `ticker` varchar(255),
+        `investment_id` integer not null,
+        `investor_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -249,6 +262,9 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+    alter table `application` 
+       add constraint UK_ao7wxw7e7mkj6g5q49yq2fw8d unique (`ticker`);
+
     alter table `investment_round` 
        add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
 
@@ -269,6 +285,16 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FK8txmd9cmj0kfxoa3kpww2tqyy` 
+       foreign key (`investment_id`) 
+       references `investment_round` (`id`);
+
+    alter table `application` 
+       add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 

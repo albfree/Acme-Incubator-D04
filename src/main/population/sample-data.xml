@@ -466,6 +466,19 @@
 		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
 	</bean>
 	
+	<!-- Applications to Investment rounds -->
+	
+	<bean name="application01" class="acme.entities.applications.Application">
+		<property name="ticker" value="SPO-20-000003" />
+		<property name="creationDate" value="2020/08/07 16:30" />
+		<property name="statement" value="Vamos a ser los próximos mil-millonarios." />
+		<property name="investmentOffer">
+			<ref bean="money03"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
+		<property name="investor" ref="investor01Investor" />
+	</bean>
+	
 	<!-- Users -->
 	
 	<bean name="user01UserAccount" class="acme.framework.entities.UserAccount">
