@@ -134,6 +134,8 @@
 		
 		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
 			<acme:menu-suboption code="master.menu.entrepreneur.investment-round.list-mine" action="/entrepreneur/investment-round/list-mine" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.entrepreneur.application.list-mine" action="/entrepreneur/application/list-mine" />
 		</acme:menu-option>
 	</acme:menu-left>
 

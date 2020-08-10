@@ -1,21 +1,23 @@
 
-package acme.features.investor.application;
+package acme.features.entrepreneur.application;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
-import acme.entities.roles.Investor;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class InvestorApplicationShowService implements AbstractShowService<Investor, Application> {
+public class EntrepreneurApplicationListMineService implements AbstractListService<Entrepreneur, Application> {
 
 	@Autowired
-	private InvestorApplicationRepository repository;
+	private EntrepreneurApplicationRepository repository;
 
 
 	@Override
@@ -31,21 +33,19 @@ public class InvestorApplicationShowService implements AbstractShowService<Inves
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "statement", "investmentOffer", "status");
+		request.unbind(entity, model, "ticker", "creationDate", "statement");
 
 	}
 
 	@Override
-	public Application findOne(final Request<Application> request) {
+	public Collection<Application> findMany(final Request<Application> request) {
 		assert request != null;
 
-		Application result;
+		Collection<Application> result;
 		Principal principal;
-		int applicationID;
 
 		principal = request.getPrincipal();
-		applicationID = request.getModel().getInteger("id");
-		result = this.repository.findOneApplicationById(applicationID, principal.getActiveRoleId());
+		result = this.repository.findApplicationsToMyInvestmentRounds(principal.getActiveRoleId());
 
 		return result;
 	}

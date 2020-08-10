@@ -475,6 +475,7 @@
 		<property name="investmentOffer">
 			<ref bean="money03"/>
 		</property>
+		<property name="status" value="PENDING" />
 		<property name="investment" ref="investmentRound02" />
 		<property name="investor" ref="investor01Investor" />
 	</bean>

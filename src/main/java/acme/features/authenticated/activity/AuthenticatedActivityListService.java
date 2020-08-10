@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -27,6 +28,12 @@ public class AuthenticatedActivityListService implements AbstractListService<Aut
 
 		if (!request.getModel().hasAttribute("id")) {
 			result = false;
+		} else {
+			int id = request.getModel().getInteger("id");
+
+			InvestmentRound investment = this.repository.findInvestmentRoundById(id);
+
+			result = investment.sumActivitiesBudgets();
 		}
 
 		return result;

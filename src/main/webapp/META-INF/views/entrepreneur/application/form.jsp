@@ -17,12 +17,12 @@
 
 <acme:form readonly="true">
 
-	<acme:form-textbox code="investor.application.form.label.ticker" path="ticker"/>
-	<acme:form-moment code="investor.application.form.label.creation-date" path="creationDate"/>
-	<acme:form-textarea code="investor.application.form.label.statement" path="statement"/>
-	<acme:form-money code="investor.application.form.label.investment-offer" path="investmentOffer"/>
-	<acme:form-money code="investor.application.form.label.status" path="status"/>
+	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker"/>
+	<acme:form-moment code="entrepreneur.application.form.label.creation-date" path="creationDate"/>
+	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement"/>
+	<acme:form-money code="entrepreneur.application.form.label.investment-offer" path="investmentOffer"/>
+	<acme:form-money code="entrepreneur.application.form.label.status" path="status"/>
 
-	<acme:form-return code="investor.application.form.button.return"/>
+	<acme:form-return code="entrepreneur.application.form.button.return"/>
 
 </acme:form>

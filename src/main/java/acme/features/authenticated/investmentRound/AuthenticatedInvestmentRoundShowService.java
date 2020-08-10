@@ -21,7 +21,14 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return true;
+		InvestmentRound result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+
+		result = this.repository.findOneInvestmentRoundById(id);
+
+		return result.sumActivitiesBudgets();
 	}
 
 	@Override

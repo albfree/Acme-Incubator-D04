@@ -32,6 +32,7 @@
         `investment_offer_amount` double precision,
         `investment_offer_currency` varchar(255),
         `statement` varchar(255),
+        `status` varchar(255),
         `ticker` varchar(255),
         `investment_id` integer not null,
         `investor_id` integer not null,

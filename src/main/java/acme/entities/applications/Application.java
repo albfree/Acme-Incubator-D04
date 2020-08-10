@@ -44,6 +44,10 @@ public class Application extends DomainEntity {
 	@Valid
 	private Money				investmentOffer;
 
+	@NotBlank
+	@Pattern(regexp = "^PENDING|ACCEPTED|REJECTED$")
+	private String				status;
+
 	@ManyToOne(optional = false)
 	@NotNull
 	@Valid

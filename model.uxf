@@ -615,6 +615,7 @@ Application
 + creationDate: Date {Past, Temporal(TIMESTAMP)}
 + statement: String {NotBlank}
 + investmentOffer: Money {NotNull, Valid}
++ status: String {NotBlank, Pattern(regexp = "^PENDING|ACCEPTED|REJECTED$")}
 + investment: InvestmentRound {ManyToOne(optional = false), NotNull, Valid}
 + investor: Investor {ManyToOne(optional = false), NotNull, Valid}</panel_attributes>
     <additional_attributes/>
