@@ -21,7 +21,18 @@ public class AuthenticatedActivityShowService implements AbstractShowService<Aut
 	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		int id;
+
+		id = request.getModel().getInteger("id");
+
+		Activity act = this.repository.findOneActivityById(id);
+
+		if (!act.getInvestment().sumActivitiesBudgets()) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override

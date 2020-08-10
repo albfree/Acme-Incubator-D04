@@ -159,7 +159,7 @@ bg=yellow</panel_attributes>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
-
++ LIST_MINE
 
 bg=orange</panel_attributes>
     <additional_attributes/>
@@ -512,7 +512,7 @@ ToolRecord
       <x>304</x>
       <y>400</y>
       <w>280</w>
-      <h>128</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Entrepreneur
@@ -586,10 +586,10 @@ Investor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>656</x>
-      <y>1184</y>
-      <w>296</w>
-      <h>96</h>
+      <x>648</x>
+      <y>1136</y>
+      <w>368</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Activity
@@ -597,14 +597,15 @@ Activity
 + title: String {NotBlank}
 + startDateTime: Date {NotNull, Temporal(TIMESTAMP)}
 + endDateTime: Date {NotNull, Temporal(TIMESTAMP)}
-+ budget: Money {NotNull, Valid}</panel_attributes>
++ budget: Money {NotNull, Valid}
++ investment: investment {ManyToOne(optional = false), NotNull, Valid}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>656</x>
-      <y>1296</y>
+      <x>648</x>
+      <y>1264</y>
       <w>520</w>
       <h>128</h>
     </coordinates>
