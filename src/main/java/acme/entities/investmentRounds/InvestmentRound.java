@@ -46,7 +46,7 @@ public class InvestmentRound extends DomainEntity {
 	private Date						creationDate;
 
 	@NotBlank
-	@Pattern(regexp = "^SEED|ANGEL|SERIES-A|SERIES-B|SERIES-C|BRIDGE$")
+	@Pattern(regexp = "^(SEED|ANGEL|SERIES-A|SERIES-B|SERIES-C|BRIDGE)$")
 	private String						kindOfRound;
 
 	@NotBlank
