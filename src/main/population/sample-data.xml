@@ -425,6 +425,16 @@
 		<property name="investment" ref="investmentRound02" />
 	</bean>
 	
+	<bean id="activity06" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 06"/>
+		<property name="startDateTime" value="2020/08/11 00:00"/>
+		<property name="endDateTime" value="2020/08/12 23:59"/>
+		<property name="budget">
+			<ref bean="money04"/>
+		</property>
+		<property name="investment" ref="investmentRound03" />
+	</bean>
+	
 	<!-- Investment rounds -->
 	
 	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
@@ -464,6 +474,24 @@
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
+	</bean>
+	
+	<bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="CAR-20-000003" />
+		<property name="creationDate" value="2020/08/10 18:00" />
+		<property name="kindOfRound" value="SERIES-C" />
+		<property name="title" value="Amazon 2.0" />
+		<property name="description" value="El próximo Amazon." />
+		<property name="amount">
+			<ref bean="money04"/>
+		</property>
+		<property name="optionalLink" value="https://www.twitter.com" />
+		<property name="workProgramme">
+			<list>
+			<ref bean="activity06" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur02Entrepreneur" />
 	</bean>
 	
 	<!-- Applications to Investment rounds -->

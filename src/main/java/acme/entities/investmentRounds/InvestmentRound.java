@@ -62,7 +62,6 @@ public class InvestmentRound extends DomainEntity {
 	@URL
 	private String						optionalLink;
 
-	@NotNull
 	@OneToMany(mappedBy = "investment", cascade = CascadeType.ALL)
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<@Valid Activity>	workProgramme;
