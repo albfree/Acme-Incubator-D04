@@ -552,7 +552,7 @@ InvestmentRound
 + description: String {NotBlank}
 + amount: Money {Valid, NotNull}
 + optionalLink: String {URL}
-+ workProgramme: Collection&lt;Activity&gt; {NotNull, OneToMany(mappedBy = "investment", cascade = CascadeType.ALL), LazyCollection(LazyCollectionOption.FALSE)}
++ workProgramme: Collection&lt;Activity&gt; {OneToMany(mappedBy = "investment", cascade = CascadeType.ALL), LazyCollection(LazyCollectionOption.FALSE)}
 + entrepreneur: Entrepreneur {ManyToOne(optional = false), Valid}</panel_attributes>
     <additional_attributes/>
   </element>
