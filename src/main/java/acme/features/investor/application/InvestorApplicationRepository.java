@@ -12,8 +12,8 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface InvestorApplicationRepository extends AbstractRepository {
 
-	@Query("select a from Application a where a.id= ?1 and a.investor.id= ?2")
-	Application findOneApplicationById(int applicationID, int investorID);
+	@Query("select a from Application a where a.id= ?1")
+	Application findOneApplicationById(int applicationID);
 
 	@Query("select a from Application a where a.investor.id= ?1")
 	Collection<Application> findMyApplications(int id);

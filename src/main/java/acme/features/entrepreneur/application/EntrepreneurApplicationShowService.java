@@ -22,7 +22,20 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int applicationID;
+		Application application;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		applicationID = request.getModel().getInteger("id");
+		application = this.repository.findOneApplicationById(applicationID);
+		entrepreneur = application.getInvestment().getEntrepreneur();
+		principal = request.getPrincipal();
+
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -40,12 +53,10 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 		assert request != null;
 
 		Application result;
-		Principal principal;
 		int applicationID;
 
-		principal = request.getPrincipal();
 		applicationID = request.getModel().getInteger("id");
-		result = this.repository.findOneApplicationById(applicationID, principal.getActiveRoleId());
+		result = this.repository.findOneApplicationById(applicationID);
 
 		return result;
 	}

@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -23,11 +25,18 @@ public class EntrepreneurActivityListService implements AbstractListService<Entr
 	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
-		boolean result = true;
+		boolean result;
+		int investmentID;
+		InvestmentRound investment;
+		Entrepreneur entrepreneur;
+		Principal principal;
 
-		if (!request.getModel().hasAttribute("id")) {
-			result = false;
-		}
+		investmentID = request.getModel().getInteger("id");
+		investment = this.repository.findOneInvestmentRoundById(investmentID);
+		entrepreneur = investment.getEntrepreneur();
+		principal = request.getPrincipal();
+
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}

@@ -22,7 +22,20 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int investmentID;
+		InvestmentRound investment;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		investmentID = request.getModel().getInteger("id");
+		investment = this.repository.findOneInvestmentRoundById(investmentID);
+		entrepreneur = investment.getEntrepreneur();
+		principal = request.getPrincipal();
+
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -45,11 +58,9 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		InvestmentRound result;
 		int id;
-		Principal principal;
 
-		principal = request.getPrincipal();
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneMineInvestmentRoundById(id, principal.getActiveRoleId());
+		result = this.repository.findOneInvestmentRoundById(id);
 
 		return result;
 	}

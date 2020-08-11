@@ -22,7 +22,21 @@ public class InvestorApplicationShowService implements AbstractShowService<Inves
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int applicationID;
+		Application application;
+		Investor investor;
+		Principal principal;
+
+		applicationID = request.getModel().getInteger("id");
+		application = this.repository.findOneApplicationById(applicationID);
+		investor = application.getInvestor();
+		principal = request.getPrincipal();
+
+		result = investor.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
+
 	}
 
 	@Override
@@ -40,12 +54,10 @@ public class InvestorApplicationShowService implements AbstractShowService<Inves
 		assert request != null;
 
 		Application result;
-		Principal principal;
 		int applicationID;
 
-		principal = request.getPrincipal();
 		applicationID = request.getModel().getInteger("id");
-		result = this.repository.findOneApplicationById(applicationID, principal.getActiveRoleId());
+		result = this.repository.findOneApplicationById(applicationID);
 
 		return result;
 	}
