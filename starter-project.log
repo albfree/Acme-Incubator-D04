@@ -858,3 +858,49 @@ ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
 org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
 com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'author' at row 1
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1406, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Data too long for column 'body' at row 1
+ERROR [org.hibernate.internal.ExceptionMapperStandardImpl] HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'body' at row 1
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1406, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Data too long for column 'body' at row 1
+ERROR [org.hibernate.internal.ExceptionMapperStandardImpl] HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'body' at row 1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateSingleConstraint(ConstraintTree.java:177): HV000028: Unexpected exception during isValid call.
+java.lang.NumberFormatException
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1406, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Data too long for column 'spam_words' at row 1
+ERROR [org.hibernate.internal.ExceptionMapperStandardImpl] HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'spam_words' at row 1
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1406, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Data too long for column 'activity_sectors' at row 1
+ERROR [org.hibernate.internal.ExceptionMapperStandardImpl] HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'activity_sectors' at row 1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [java.lang.String] to type [java.lang.Double] for value '2,50asdoasdhasifuhasfiusadsafhasdhfsdaiouhfasdiufhasdiufhasdiufhasdiufhadsiufhsdiufhsidufhasidufhsiduhfasiudfhasdiufhasferiuohñjqnuououououonuonuououououououofhuioqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqrfhueioqeioqeioqeioqeioqeioqeifxcfgsdfgsdfgs'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2,50asdoasdhasifuhasfiusadsafhasdhfsdaiouhfasdiufhasdiufhasdiufhasdiufhadsiufhsdiufhsidufhasidufhsiduhfasiudfhasdiufhasferiuohñjqnuououououonuonuououououououofhuioqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqrfhueioqeioqeioqeioqeioqeioqeifxcfgsdfgsdfgs]
+org.springframework.format.support.FormattingConversionService$ParserConverter.convert(FormattingConversionService.java:206): Parse attempt failed for value [2,50asdoasdhasifuhasfiusadsafhasdhfsdaiouhfasdiufhasdiufhasdiufhasdiufhadsiufhsdiufhsidufhasidufhsiduhfasiudfhasdiufhasferiuohñjqnuououououonuonuououououououofhuioqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqerñqrfhueioqeioqeioqeioqeioqeioqeifxcfgsdfgsdfgs]
+acme.framework.utilities.LocalisedDoubleFormatter.parse(LocalisedDoubleFormatter.java:59): Valor incorrecto
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP POST /acme-incubator/META-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [java.lang.String] to type [java.lang.Double] for value '2,50dsfgsdf'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2,50dsfgsdf]
+org.springframework.format.support.FormattingConversionService$ParserConverter.convert(FormattingConversionService.java:206): Parse attempt failed for value [2,50dsfgsdf]
+acme.framework.utilities.LocalisedDoubleFormatter.parse(LocalisedDoubleFormatter.java:59): Valor incorrecto

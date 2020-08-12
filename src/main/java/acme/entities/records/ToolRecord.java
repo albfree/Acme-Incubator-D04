@@ -7,6 +7,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -26,19 +27,24 @@ public class ToolRecord extends DomainEntity {
 	//Atributes ------------------------------------------------------------
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				title;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				activitySector;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				inventorsName;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				description;
 
 	@NotBlank
 	@URL
+	@Size(min = 1, max = 255)
 	private String				website;
 
 	@NotBlank

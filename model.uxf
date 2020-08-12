@@ -377,13 +377,13 @@ GuerreroBulletin
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Notice
 --
-+ headerPicture: String {NotBlank, URL}
-+ title: String {NotBlank}
++ headerPicture: String {NotBlank, URL, Size(min = 1, max = 255)}
++ title: String {NotBlank, Size(min = 1, max = 255)}
 + creationDate: Date {Temporal(TIMESTAMP), Past}
 + deadline: Date {Temporal(TIMESTAMP), NotNull}
-+ body: String {NotBlank}
-+ firstOptionalLink: String {URL}
-+ secondOptionalLink: String {URL}</panel_attributes>
++ body: String {NotBlank, Size(min = 1, max = 255)}
++ firstOptionalLink: String {URL, Size(max = 255)}
++ secondOptionalLink: String {URL, Size(max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -397,14 +397,14 @@ Notice
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Challenge
 --
-+ title: String {NotBlank}
++ title: String {NotBlank, Size(min = 1, max = 255)}
 + deadline: Date {NotNull, Temporal(TIMESTAMP)}
-+ description: String {NotBlank}
-+ rookieGoal: String {NotBlank}
++ description: String {NotBlank, Size(min = 1, max = 255)}
++ rookieGoal: String {NotBlank, Size(min = 1, max = 255)}
 + rookieReward: Money {NotNull, Valid}
-+ averageGoal: String {NotBlank}
++ averageGoal: String {NotBlank, Size(min = 1, max = 255)}
 + averageReward: Money {NotNull, Valid}
-+ expertGoal: String {NotBlank}
++ expertGoal: String {NotBlank, Size(min = 1, max = 255)}
 + expertReward: Money {NotNull, Valid}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -419,9 +419,9 @@ Challenge
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Customization
 --
-+ spamWords: String {NotBlank}
++ spamWords: String {NotBlank, Size(min = 1, max = 255)}
 + threshold: double{NotNull, Digits(3, 2), Positive}
-+ activitySectors: String {NotBlank}</panel_attributes>
++ activitySectors: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -435,10 +435,10 @@ Customization
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Overture
 --
-+ title: String {NotBlank}
++ title: String {NotBlank, Size(min = 1, max = 255)}
 + creation: Date {NotNull, Temporal(TIMESTAMP), Past}
 + deadline: Date {NotNull, Temporal(TIMESTAMP)}
-+ description: String {NotBlank}
++ description: String {NotBlank, Column(length = 1000), Size(min = 1, max = 1000)}
 + minMoney: Money {NotNull, Valid}
 + maxMoney: Money {NotNull, Valid}
 + email: Email {NotBlank, Email}</panel_attributes>
@@ -455,10 +455,10 @@ Overture
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Inquiry
 --
-+ title: String {NotBlank}
++ title: String {NotBlank, Size(min = 1, max = 255)}
 + creation: Date {NotNull, Temporal(TIMESTAMP), Past}
 + deadline: Date {NotNull, Temporal(TIMESTAMP)}
-+ description: String {NotBlank}
++ description: String {NotBlank, Column(length = 1000), Size(min = 1, max = 1000)}
 + minMoney: Money {NotNull, Valid}
 + maxMoney: Money {NotNull, Valid}
 + email: Email {NotBlank, Email}</panel_attributes>
@@ -475,11 +475,11 @@ Inquiry
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 TechnologyRecord
 --
-+ title: String {NotBlank}
-+ activitySector: String {NotBlank}
-+ inventorsName: String {NotBlank}
-+ description: String {NotBlank}
-+ website: String {NotBlank,URL}
++ title: String {NotBlank, Size(min = 1, max = 255)}
++ activitySector: String {NotBlank, Size(min = 1, max = 255)}
++ inventorsName: String {NotBlank, Size(min = 1, max = 255)}
++ description: String {NotBlank, Size(min = 1, max = 255)}
++ website: String {NotBlank, URL, Size(min = 1, max = 255)}
 + email: String {NotBlank, email}
 + indication: String {NotBlank, Pattern(regexp = "^(open-source|closed-source)$")}
 + starsRate: Integer {MIN(-5), MAX(5)}</panel_attributes>
@@ -496,11 +496,11 @@ TechnologyRecord
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 ToolRecord
 --
-+ title: String {NotBlank}
-+ activitySector: String {NotBlank}
-+ inventorsName: String {NotBlank}
-+ description: String {NotBlank}
-+ website: String {NotBlank,URL}
++ title: String {NotBlank, Size(min = 1, max = 255)}
++ activitySector: String {NotBlank, Size(min = 1, max = 255)}
++ inventorsName: String {NotBlank, Size(min = 1, max = 255)}
++ description: String {NotBlank, Size(min = 1, max = 255)}
++ website: String {NotBlank, URL, Size(min = 1, max = 255)}
 + email: String {NotBlank, email}
 + indication: String {NotBlank, Pattern(regexp = "^(open-source|closed-source)$")}
 + starsRate: Integer {MIN(-5), MAX(5)}</panel_attributes>

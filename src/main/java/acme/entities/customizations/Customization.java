@@ -6,6 +6,7 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class Customization extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				spamWords;
 
 	@NotNull
@@ -27,6 +29,7 @@ public class Customization extends DomainEntity {
 	private Double				threshold;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				activitySectors;
 
 }
