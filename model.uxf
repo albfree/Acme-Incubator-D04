@@ -296,10 +296,10 @@ has v</panel_attributes>
 EscobarBulletin
 --
 + moment: Date {Temporal(TIMESTAMP), Past}
-+ author: String {NotBlank}
-+ link: String {URL, NotBlank}
-+ country: String {NotBlank}
-+ text: String {NotBlank}</panel_attributes>
++ author: String {NotBlank, Size(min = 1, max = 255)}
++ link: String {URL, NotBlank, Size(min = 1, max = 255)}
++ country: String {NotBlank, Size(min = 1, max = 255)}
++ text: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -314,8 +314,8 @@ EscobarBulletin
 LobatoBulletin
 --
 + moment: Date {Temporal(TIMESTAMP), Past}
-+ scientist: String {NotBlank}
-+ investigation: String {NotBlank}</panel_attributes>
++ scientist: String {NotBlank, Size(min = 1, max = 255)}
++ investigation: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -330,8 +330,8 @@ LobatoBulletin
 HorrilloBulletin
 --
 + time: Date {Temporal(TIMESTAMP), Past}
-+ author: String {NotBlank}
-+ body: String {NotBlank}</panel_attributes>
++ author: String {NotBlank, Size(min = 1, max = 255)}
++ body: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -346,8 +346,8 @@ HorrilloBulletin
 PerezBulletin
 --
 + moment: Date {Temporal(TIMESTAMP), Past}
-+ author: String {NotBlank}
-+ event: String {NotBlank}</panel_attributes>
++ author: String {NotBlank, Size(min = 1, max = 255)}
++ event: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -362,8 +362,8 @@ PerezBulletin
 GuerreroBulletin
 --
 + moment: Date {Temporal(TIMESTAMP), Past}
-+ name: String {NotBlank}
-+ quote: String {NotBlank}</panel_attributes>
++ name: String {NotBlank, Size(min = 1, max = 255)}
++ quote: String {NotBlank, Size(min = 1, max = 255)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
