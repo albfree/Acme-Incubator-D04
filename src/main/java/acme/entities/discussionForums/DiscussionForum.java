@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -16,6 +17,7 @@ import javax.validation.constraints.Past;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.messages.Message;
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,21 +27,26 @@ import lombok.Setter;
 @Setter
 public class DiscussionForum extends DomainEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long			serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				title;
+	private String						title;
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				creationMoment;
+	private Date						creationMoment;
 
 	@Valid
 	@OneToMany(mappedBy = "discussionForum")
-	private Collection<Message>	messages;
+	private Collection<Message>			messages;
 
 	@NotNull
 	@Valid
 	@OneToOne(optional = true)
-	private InvestmentRound		investmentRound;
+	private InvestmentRound				investmentRound;
+
+	@ManyToMany
+	@Valid
+	@NotNull
+	private Collection<Authenticated>	participants;
 }
