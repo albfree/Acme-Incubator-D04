@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 
-	<definition name="/entrepreneur/message/list" extends="master">
-		<put-attribute name="body" type="template" value="../entrepreneur/message/list.jsp" />
+	<definition name="/authenticated/message/list" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/message/list.jsp" />
 	</definition>
 	
-	<definition name="/entrepreneur/message/form" extends="master">
-		<put-attribute name="body" type="template" value="../entrepreneur/message/form.jsp" />
+	<definition name="/authenticated/message/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/message/form.jsp" />
 	</definition>
 
 </tiles-definitions>

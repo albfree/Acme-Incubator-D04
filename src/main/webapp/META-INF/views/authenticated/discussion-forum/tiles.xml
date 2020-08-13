@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 
-	<definition name="entrepreneur/discussion-round/list" extends="master">
-		<put-attribute name="body" type="template" value="../entrepreneur/discussion-round/list.jsp" />
+	<definition name="/authenticated/discussion-round/list" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/discussion-round/list.jsp" />
 	</definition>
 	
-	<definition name="entrepreneur/discussion-round/form" extends="master">
-		<put-attribute name="body" type="template" value="../entrepreneur/discussion-round/form.jsp" />
+	<definition name="/authenticated/discussion-round/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/discussion-round/form.jsp" />
 	</definition>
 
 </tiles-definitions>

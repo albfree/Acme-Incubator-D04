@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
 #
@@ -8,11 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-entrepreneur.discussion-forum.list.label.title = Título
-entrepreneur.discussion-forum.list.label.creation-moment = Creación
+authenticated.message.list.label.creation-moment = Creation
+authenticated.message.list.label.title = Title
+authenticated.message.list.label.tags = Tags
 
-entrepreneur.discussion-forum.form.label.title = Título:
-entrepreneur.discussion-forum.form.label.creation-moment = Creación
+authenticated.message.form.label.title = Title:
+authenticated.message.form.label.creation-moment = Creation:
+authenticated.message.form.label.body = Body:
 
-entrepreneur.discussion-forum.form.button.messages = Abrir Foro
-entrepreneur.discussion-forum.form.button.return = Volver
+authenticated.message.form.button.return = Return

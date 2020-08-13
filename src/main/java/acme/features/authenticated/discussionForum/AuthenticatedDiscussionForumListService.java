@@ -53,8 +53,7 @@ public class AuthenticatedDiscussionForumListService implements AbstractListServ
 
 		if (principal.getActiveRole().equals(Investor.class)) {
 			res.addAll(this.discussionForumRepository.findManyByInvestorId(rolId));
-		}
-		if (principal.getActiveRole().equals(Entrepreneur.class)) {
+		} else if (principal.getActiveRole().equals(Entrepreneur.class)) {
 			res.addAll(this.discussionForumRepository.findManyByEntrepreneurId(rolId));
 		}
 

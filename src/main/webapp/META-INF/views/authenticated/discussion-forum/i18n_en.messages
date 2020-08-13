@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-entrepreneur.discussion-forum.list.label.title = Title
-entrepreneur.discussion-forum.list.label.creation-moment = Creation
+authenticated.discussion-forum.list.label.title = Title
+authenticated.discussion-forum.list.label.creation-moment = Creation
 
-entrepreneur.discussion-forum.form.label.title = Title:
-entrepreneur.discussion-forum.form.label.creation-moment = Creation:
+authenticated.discussion-forum.form.label.title = Title:
+authenticated.discussion-forum.form.label.creation-moment = Creation:
 
-entrepreneur.discussion-forum.form.button.messages = Open Forum
-entrepreneur.discussion-forum.form.button.return = Return
+authenticated.discussion-forum.form.button.messages = Open Forum
+authenticated.discussion-forum.form.button.return = Return

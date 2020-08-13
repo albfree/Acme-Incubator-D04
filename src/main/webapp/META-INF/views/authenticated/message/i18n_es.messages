@@ -8,12 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-entrepreneur.message.list.label.creation-moment = Creación
-entrepreneur.message.list.label.title = Título
-entrepreneur.message.list.label.tags = Etiquetas
+authenticated.message.list.label.creation-moment = Creación
+authenticated.message.list.label.title = Título
+authenticated.message.list.label.tags = Etiquetas
 
-entrepreneur.message.form.label.title = Título:
-entrepreneur.message.form.label.creation-moment = Creación:
-entrepreneur.message.form.label.body = Cuerpo:
+authenticated.message.form.label.title = Título:
+authenticated.message.form.label.creation-moment = Creación:
+authenticated.message.form.label.body = Cuerpo:
 
-entrepreneur.message.form.button.return = Volver
+authenticated.message.form.button.return = Volver
