@@ -376,6 +376,48 @@
 		</property>
 	</bean>
 
+	<!-- Accounting records -->
+
+	<bean id="accountingRecord01" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Balance" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="body" value="Tax returns: 10 years" />
+		<property name="bookkeeper" ref="bookkeeperBookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+
+	</bean>
+
+	<bean id="accountingRecord02" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Balance" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/21 11:00" />
+		<property name="body" value="Financial report: monthly" />
+		<property name="bookkeeper" ref="bookkeeperBookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+
+	</bean>
+
+	<bean id="accountingRecord03" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="body" value="Tax returns: 10 years" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound02" />
+
+	</bean>
+
+	<bean id="accountingRecord04" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/21 18:00" />
+		<property name="body" value="Financial report: monthly" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound02" />
+
+	</bean>
+
 	<!-- Users -->
 
 	<bean name="user01UserAccount" class="acme.framework.entities.UserAccount">
@@ -432,4 +474,32 @@
 		<property name="userAccount" ref="bookkeeper1UserAccount" />
 	</bean>
 
+	<bean name="bookkeeper2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper2" />
+		<property name="password" value="bookkeeper2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Bookkeeper" />
+				<property name="surname" value="Adams" />
+				<property name="email" value="book.adams@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper2Bookkeeper" />
+				<ref bean="bookkeeper2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="userAccount" ref="bookkeeper2UserAccount" />
+		<property name="firmName" value="Bookkeeper SL." />
+		<property name="responsibilityStatement" value="I am responsible. X" />
+	</bean>
+
+	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	</bean>
 </beans>
