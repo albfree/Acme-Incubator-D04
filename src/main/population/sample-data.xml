@@ -657,5 +657,96 @@
 	<bean name="investor02Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
+	
+	
+	<!-- Discussion Forums -->
+	
+	
+	<bean name="discussionForum01" class="acme.entities.discussionForums.DiscussionForum">
+		<property name="title" value="discussionForum01"/>
+		<property name="creationMoment" value="2020/07/10 12:21"/>
+		<property name="investmentRound" ref="investmentRound01" />
+		<property name="messages">
+			<list>
+				<ref bean="message01Forum01"/>
+				<ref bean="message02Forum01"/>
+				<ref bean="message03Forum01"/>
+				<ref bean="message04Forum01"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="discussionForum02" class="acme.entities.discussionForums.DiscussionForum">
+		<property name="title" value="discussionForum02"/>
+		<property name="creationMoment" value="2020/08/01 13:03"/>
+		<property name="investmentRound" ref="investmentRound02" />
+		<property name="messages">
+			<list>
+				<ref bean="message01Forum02"/>
+				<ref bean="message02Forum02"/>
+				<ref bean="message03Forum02"/>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- Messages -->
+	
+	
+	<bean name="message01Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="title01"/>
+		<property name="creationMoment" value="2020/07/10 12:33"/>
+		<property name="tags" value=""/>
+		<property name="body" value="Question"/>
+		<property name="discussionForum" ref="discussionForum01" />
+	</bean>
+	
+	<bean name="message02Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="title02"/>
+		<property name="creationMoment" value="2020/07/12 13:43"/>
+		<property name="tags" value=""/>
+		<property name="body" value="Reply"/>
+		<property name="discussionForum" ref="discussionForum01" />
+	</bean>
+	
+	<bean name="message03Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="title03"/>
+		<property name="creationMoment" value="2020/07/19 22:01"/>
+		<property name="tags" value="tag1, tag2"/>
+		<property name="body" value="Response"/>
+		<property name="discussionForum" ref="discussionForum01" />
+	</bean>
+	
+	<bean name="message04Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="title04"/>
+		<property name="creationMoment" value="2020/07/20 12:54"/>
+		<property name="tags" value="tag1,tag3"/>
+		<property name="body" value="Solution"/>
+		<property name="discussionForum" ref="discussionForum01" />
+	</bean>
+	
+	<bean name="message01Forum02" class="acme.entities.messages.Message">
+		<property name="title" value="title01"/>
+		<property name="creationMoment" value="2020/08/01 13:23"/>
+		<property name="tags" value=""/>
+		<property name="body" value="Question"/>
+		<property name="discussionForum" ref="discussionForum02" />
+	</bean>
+	
+	<bean name="message02Forum02" class="acme.entities.messages.Message">
+		<property name="title" value="title02"/>
+		<property name="creationMoment" value="2020/08/01 13:45"/>
+		<property name="tags" value=""/>
+		<property name="body" value="Reply"/>
+		<property name="discussionForum" ref="discussionForum02" />
+	</bean>
+	
+	<bean name="message03Forum02" class="acme.entities.messages.Message">
+		<property name="title" value="title03"/>
+		<property name="creationMoment" value="2020/08/02 01:01"/>
+		<property name="tags" value="tag1"/>
+		<property name="body" value="Response"/>
+		<property name="discussionForum" ref="discussionForum02" />
+	</bean>
 
 </beans>
