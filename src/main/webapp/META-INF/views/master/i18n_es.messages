@@ -82,10 +82,16 @@ master.menu.administrator.technology-record.create = Crear Registro de Tecnologi
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
+master.menu.authenticated.investment-round.list = Lista de rondas de inversión
 master.menu.authenticated.notice.list = Lista de avisos
 master.menu.authenticated.challenge = Desafíos
 master.menu.authenticated.overture.list = Lista de propuestas
 master.menu.authenticated.inquiry.list = Lista de consultas
+
+# master.menu.investor ###################################################
+
+master.menu.investor = Inversor
+master.menu.investor.application.list-mine = Mis solicitudes
 
 # master.menu.provider ########################################################
 
@@ -96,6 +102,12 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.entrepreneur ###################################################
+
+master.menu.entrepreneur = Emprendedor
+master.menu.entrepreneur.investment-round.list-mine = Lista de mis rondas de inversión
+master.menu.entrepreneur.application.list-mine = Solicitudes a mis rondas de inversión
 
 # master.menu.user-account ####################################################
 
