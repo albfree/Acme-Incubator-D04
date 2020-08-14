@@ -7,25 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.customizations.Customization;
+import acme.entities.records.AccountingRecord;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/administrator/customization/")
-public class EntrepreneurAccountingRecordController extends AbstractController<Administrator, Customization> {
+@RequestMapping("/entrepreneur/accounting-record/")
+public class EntrepreneurAccountingRecordController extends AbstractController<Entrepreneur, AccountingRecord> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private EntrepreneurAccountingRecordListService	listService;
+	private EntrepreneurAccountingRecordListService		listService;
 
 	@Autowired
-	private EntrepreneurAccountingRecordShowService	showService;
+	private EntrepreneurAccountingRecordShowService		showService;
 
 	@Autowired
-	private AdministratorCustomizationUpdateService	updateService;
+	private EntrepreneurAccountingRecordUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------
