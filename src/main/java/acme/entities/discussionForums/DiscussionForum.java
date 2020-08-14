@@ -40,9 +40,9 @@ public class DiscussionForum extends DomainEntity {
 	@OneToMany(mappedBy = "discussionForum")
 	private Collection<Message>			messages;
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = true)
+	@NotNull
+	@OneToOne(optional = false)
 	private InvestmentRound				investmentRound;
 
 	@ManyToMany

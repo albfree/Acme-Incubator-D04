@@ -20,10 +20,9 @@
 	<input id="dfId" name="dfId" type="hidden" value= "${param.dfId}" />
 	<acme:form-textbox code="authenticated.discussion-forum.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.discussion-forum.form.label.creation-moment" path="creationMoment"/>
-	<acme:form-hidden path="investmentRound"/>
 
 	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages" 
-		action="/authenticated/message/list-mine/?dfId=${id}"/>
+		action="/authenticated/message/list-mine?dfId=${id}"/>
 	<acme:form-return code="authenticated.discussion-forum.form.button.return"/>
 
 </acme:form>

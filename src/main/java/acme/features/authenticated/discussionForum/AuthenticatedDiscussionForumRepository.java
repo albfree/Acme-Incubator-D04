@@ -16,12 +16,12 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 	@Query("select df from DiscussionForum df where df.id=?1")
 	DiscussionForum findOneById(int id);
 
-	@Query("select df from DiscussionForum df where df.investmentRound.entrepreneur.id = ?1")
+	@Query("select df from DiscussionForum df where df.investmentRound.entrepreneur.userAccount.id = ?1")
 	Collection<DiscussionForum> findManyByEntrepreneurId(int id);
 
-	@Query("select df.id from DiscussionForum df where investmentRound.id = (select ap.investment.id from Application ap where ap.investor.id = ?1 and ap.status = 'ACCEPTED')")
+	@Query("select df from DiscussionForum df where investmentRound.id = (select ap.investment.id from Application ap where ap.investor.userAccount.id = ?1 and ap.status = 'ACCEPTED')")
 	Collection<DiscussionForum> findManyByInvestorId(int id);
 
-	@Query("select a Authenticated a where a.userAccount.id = ?1")
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
 	Authenticated findMyself(int id);
 }

@@ -87,6 +87,7 @@ master.menu.authenticated.notice.list = Notice's list
 master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.overture.list = List of overtures
 master.menu.authenticated.inquiry.list = List of inquiries
+master.menu.authenticated.discussion-forum.list = Discussion Forums
 
 # master.menu.investor ###################################################
 

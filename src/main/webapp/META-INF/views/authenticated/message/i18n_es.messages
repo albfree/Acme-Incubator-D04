@@ -15,5 +15,6 @@ authenticated.message.list.label.tags = Etiquetas
 authenticated.message.form.label.title = Título:
 authenticated.message.form.label.creation-moment = Creación:
 authenticated.message.form.label.body = Cuerpo:
+authenticated.message.form.label.tags = Etiquetas
 
 authenticated.message.form.button.return = Volver

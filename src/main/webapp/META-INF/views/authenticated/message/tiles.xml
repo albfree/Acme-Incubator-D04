@@ -18,11 +18,11 @@
 
 <tiles-definitions>
 
-	<definition name="/authenticated/message/list" extends="master">
+	<definition name="authenticated/message/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/message/list.jsp" />
 	</definition>
 	
-	<definition name="/authenticated/message/form" extends="master">
+	<definition name="authenticated/message/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/message/form.jsp" />
 	</definition>
 

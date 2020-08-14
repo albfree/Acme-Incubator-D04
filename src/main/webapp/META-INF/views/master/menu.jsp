@@ -79,6 +79,8 @@
 			<acme:menu-suboption code="master.menu.technology-record.list" action="/authenticated/technology-record/list" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.tool-record.list" action="/authenticated/tool-record/list" />
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.discussion-forum.list" action="/authenticated/discussion-forum/list-mine"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">

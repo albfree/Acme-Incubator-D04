@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 
-	<definition name="/authenticated/discussion-round/list" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/discussion-round/list.jsp" />
+	<definition name="authenticated/discussion-forum/list" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/discussion-forum/list.jsp" />
 	</definition>
 	
-	<definition name="/authenticated/discussion-round/form" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/discussion-round/form.jsp" />
+	<definition name="authenticated/discussion-forum/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/discussion-forum/form.jsp" />
 	</definition>
 
 </tiles-definitions>

@@ -18,7 +18,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedDiscussionForumListService implements AbstractListService<Authenticated, DiscussionForum> {
+public class AuthenticatedDiscussionForumListMineService implements AbstractListService<Authenticated, DiscussionForum> {
 
 	@Autowired
 	AuthenticatedDiscussionForumRepository discussionForumRepository;
@@ -45,16 +45,16 @@ public class AuthenticatedDiscussionForumListService implements AbstractListServ
 
 		Set<DiscussionForum> res;
 		Principal principal;
-		int rolId;
+		int id;
 
 		principal = request.getPrincipal();
 		res = new HashSet<DiscussionForum>();
-		rolId = principal.getActiveRoleId();
+		id = principal.getAccountId();
 
-		if (principal.getActiveRole().equals(Investor.class)) {
-			res.addAll(this.discussionForumRepository.findManyByInvestorId(rolId));
-		} else if (principal.getActiveRole().equals(Entrepreneur.class)) {
-			res.addAll(this.discussionForumRepository.findManyByEntrepreneurId(rolId));
+		if (principal.hasRole(Investor.class)) {
+			res.addAll(this.discussionForumRepository.findManyByInvestorId(id));
+		} else if (principal.hasRole(Entrepreneur.class)) {
+			res.addAll(this.discussionForumRepository.findManyByEntrepreneurId(id));
 		}
 
 		return res;
