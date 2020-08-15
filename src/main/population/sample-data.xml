@@ -508,6 +508,66 @@
 		<property name="investor" ref="investor01Investor" />
 	</bean>
 	
+	<bean name="application02" class="acme.entities.applications.Application">
+        <property name="ticker" value="DJE-65-000004" />
+        <property name="creationDate" value="2019/05/01 12:30" />
+        <property name="statement" value="A por el dinero." />
+        <property name="investmentOffer">
+            <ref bean="money01"/>
+        </property>
+        <property name="status" value="ACCEPTED" />
+        <property name="investment" ref="investmentRound01" />
+        <property name="investor" ref="investor01Investor" />
+    </bean>
+    
+    <bean name="application03" class="acme.entities.applications.Application">
+        <property name="ticker" value="VTY-11-000005" />
+        <property name="creationDate" value="2019/01/01 01:30" />
+        <property name="statement" value="En busca de billetes." />
+        <property name="investmentOffer">
+            <ref bean="money02"/>
+        </property>
+        <property name="status" value="ACCEPTED" />
+        <property name="investment" ref="investmentRound02" />
+        <property name="investor" ref="investor02Investor" />
+    </bean>
+    
+    <bean name="application04" class="acme.entities.applications.Application">
+        <property name="ticker" value="VQO-73-000054" />
+        <property name="creationDate" value="2019/07/02 11:30" />
+        <property name="statement" value="A currar." />
+        <property name="investmentOffer">
+            <ref bean="money01"/>
+        </property>
+        <property name="status" value="PENDING" />
+        <property name="investment" ref="investmentRound02" />
+        <property name="investor" ref="investor02Investor" />
+    </bean>
+    
+    <bean name="application05" class="acme.entities.applications.Application">
+        <property name="ticker" value="JAL-41-000720" />
+        <property name="creationDate" value="2020/02/03 16:00" />
+        <property name="statement" value="Eficiencia pura." />
+        <property name="investmentOffer">
+            <ref bean="money02"/>
+        </property>
+        <property name="status" value="PENDING" />
+        <property name="investment" ref="investmentRound03" />
+        <property name="investor" ref="investor04Investor" />
+    </bean>
+    
+    <bean name="application06" class="acme.entities.applications.Application">
+        <property name="ticker" value="JFW-41-000720" />
+        <property name="creationDate" value="2018/09/10 18:00" />
+        <property name="statement" value="Testeo rápido." />
+        <property name="investmentOffer">
+            <ref bean="money03"/>
+        </property>
+        <property name="status" value="REJECTED" />
+        <property name="investment" ref="investmentRound03" />
+        <property name="investor" ref="investor03Investor" />
+    </bean>
+	
 	<!-- Users -->
 	
 	<bean name="user01UserAccount" class="acme.framework.entities.UserAccount">
@@ -658,6 +718,66 @@
 		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
 	
+	<bean name="investor03UserAccount" class="acme.framework.entities.UserAccount">
+        <property name="username" value="investor03"/>
+        <property name="password" value="investor03"/>
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="Investor" />
+                <property name="surname" value="Three" />
+                <property name="email" value="investor03@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="investor03Investor"/>
+                <ref bean="investor03Authenticated"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="investor03Investor" class="acme.entities.roles.Investor">
+        <property name="firmName" value="SpaceX"/>
+        <property name="activitySector" value="Space things"/>
+        <property name="profile" value="Influencer"/>
+        <property name="userAccount" ref="investor03UserAccount"/>
+    </bean>
+
+    <bean name="investor03Authenticated" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="investor03UserAccount"/>
+    </bean>
+    
+    <bean name="investor04UserAccount" class="acme.framework.entities.UserAccount">
+        <property name="username" value="investor04"/>
+        <property name="password" value="investor04"/>
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="Investor" />
+                <property name="surname" value="Four" />
+                <property name="email" value="investor04@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="investor04Investor"/>
+                <ref bean="investor04Authenticated"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="investor04Investor" class="acme.entities.roles.Investor">
+        <property name="firmName" value="McDonald"/>
+        <property name="activitySector" value="Healthy food"/>
+        <property name="profile" value="Chef"/>
+        <property name="userAccount" ref="investor04UserAccount"/>
+    </bean>
+
+    <bean name="investor04Authenticated" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="investor04UserAccount"/>
+    </bean>
+	
 	
 	<!-- Discussion Forums -->
 	
@@ -674,7 +794,13 @@
 				<ref bean="message04Forum01"/>
 			</list>
 		</property>
+		<property name="participants">
+			<list>
+				<ref bean="investor01Authenticated"/>
+			</list>
+		</property>
 	</bean>
+	
 	
 	<bean name="discussionForum02" class="acme.entities.discussionForums.DiscussionForum">
 		<property name="title" value="discussionForum02"/>
@@ -685,6 +811,11 @@
 				<ref bean="message01Forum02"/>
 				<ref bean="message02Forum02"/>
 				<ref bean="message03Forum02"/>
+			</list>
+		</property>
+		<property name="participants">
+			<list>
+				<ref bean="investor02Authenticated"/>
 			</list>
 		</property>
 	</bean>
@@ -724,6 +855,7 @@
 		<property name="body" value="Solution"/>
 		<property name="discussionForum" ref="discussionForum01" />
 	</bean>
+	
 	
 	<bean name="message01Forum02" class="acme.entities.messages.Message">
 		<property name="title" value="title01"/>
