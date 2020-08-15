@@ -27,6 +27,18 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `discussion_forum` 
+       drop 
+       foreign key `FKmcgrpw22g3baap51wq319v1bp`;
+
+    alter table `discussion_forum_authenticated` 
+       drop 
+       foreign key `FKgs1wnndisabq6j2g2w5nj4pla`;
+
+    alter table `discussion_forum_authenticated` 
+       drop 
+       foreign key `FKo0i6i5a8flkqrnjuyxvxqt7ms`;
+
     alter table `entrepreneur` 
        drop 
        foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
@@ -38,6 +50,10 @@
     alter table `investor` 
        drop 
        foreign key FK_dcek5rr514s3rww0yy57vvnpq;
+
+    alter table `message` 
+       drop 
+       foreign key `FKr2om5f6tefk2fg0fyl53q2kgd`;
 
     alter table `provider` 
        drop 
@@ -59,6 +75,10 @@
 
     drop table if exists `customization`;
 
+    drop table if exists `discussion_forum`;
+
+    drop table if exists `discussion_forum_authenticated`;
+
     drop table if exists `entrepreneur`;
 
     drop table if exists `escobar_bulletin`;
@@ -74,6 +94,8 @@
     drop table if exists `investor`;
 
     drop table if exists `lobato_bulletin`;
+
+    drop table if exists `message`;
 
     drop table if exists `notice`;
 

@@ -82,6 +82,20 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `discussion_forum` (
+       `id` integer not null,
+        `version` integer not null,
+        `creation_moment` datetime(6),
+        `title` varchar(255),
+        `investment_round_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `discussion_forum_authenticated` (
+       `discussion_forum_id` integer not null,
+        `participants_id` integer not null
+    ) engine=InnoDB;
+
     create table `entrepreneur` (
        `id` integer not null,
         `version` integer not null,
@@ -168,6 +182,17 @@
         `investigation` varchar(255),
         `moment` datetime(6),
         `scientist` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `creation_moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `discussion_forum_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -266,6 +291,9 @@
     alter table `application` 
        add constraint UK_ao7wxw7e7mkj6g5q49yq2fw8d unique (`ticker`);
 
+    alter table `discussion_forum` 
+       add constraint UK_bh0lucmvo3025w2dl16tt130i unique (`investment_round_id`);
+
     alter table `investment_round` 
        add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
 
@@ -307,6 +335,21 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `discussion_forum` 
+       add constraint `FKmcgrpw22g3baap51wq319v1bp` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
+    alter table `discussion_forum_authenticated` 
+       add constraint `FKgs1wnndisabq6j2g2w5nj4pla` 
+       foreign key (`participants_id`) 
+       references `authenticated` (`id`);
+
+    alter table `discussion_forum_authenticated` 
+       add constraint `FKo0i6i5a8flkqrnjuyxvxqt7ms` 
+       foreign key (`discussion_forum_id`) 
+       references `discussion_forum` (`id`);
+
     alter table `entrepreneur` 
        add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
        foreign key (`user_account_id`) 
@@ -321,6 +364,11 @@
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `message` 
+       add constraint `FKr2om5f6tefk2fg0fyl53q2kgd` 
+       foreign key (`discussion_forum_id`) 
+       references `discussion_forum` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
