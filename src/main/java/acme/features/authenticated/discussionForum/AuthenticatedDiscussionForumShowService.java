@@ -40,9 +40,9 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 		accId = principal.getAccountId();
 		myself = this.discussionForumRepository.findMyself(accId);
 
-		boolean ImEntrepreneur = accId == forum.getInvestmentRound().getEntrepreneur().getUserAccount().getId();
+		boolean iAmEntrepreneur = accId == forum.getInvestmentRound().getEntrepreneur().getUserAccount().getId();
 
-		res = participants.contains(myself) || ImEntrepreneur;
+		res = participants.contains(myself) || iAmEntrepreneur;
 
 		return res;
 
