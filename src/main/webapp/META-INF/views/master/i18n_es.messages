@@ -42,23 +42,23 @@ master.menu.anonymous.joslobtro-favourite-link = Enlace favorito de joslobtro
 
 # master.menu.anonymous.bulletin #######################################################
 
-master.menu.bulletins.list = Lista de bulletins
-master.menu.bulletins.create = Crear un bulletin
+master.menu.bulletins.list = Bulletins' list
+master.menu.bulletins.create = Create a bulletin
 
-master.menu.anonymous.guerrero-bulletin.list = Lista de bulletins de Guerrero
-master.menu.anonymous.guerreroBulletin.create = Crear bulletin de Guerrero
+master.menu.anonymous.guerrero-bulletin.list = Guerrero's bulletins list
+master.menu.anonymous.guerreroBulletin.create =  New Guerrero's bulletin
 
-master.menu.anonymous.escobar-bulletin.list = Lista de EscobarBulletins
-master.menu.anonymous.escobar-bulletin.create = Nuevo EscobarBulletin
+master.menu.anonymous.escobar-bulletin.list = EscobarBulletins' list
+master.menu.anonymous.escobar-bulletin.create = New EscobarBulletin
 
-master.menu.bulletins.horrillo-bulletin.list = Horrillo bulletin
-master.menu.bulletins.horrillo-bulletin.create = Nuevo Horrillo bulletin
+master.menu.bulletins.horrillo-bulletin.list = HorrilloBulletins' list
+master.menu.bulletins.horrillo-bulletin.create = New HorrilloBulletin
 
-master.menu.anonymous.perezBulletin.list = Lista de boletines de Brayan
-master.menu.anonymous.perezBulletin.create = Crear boletín de Brayan
+master.menu.anonymous.perezBulletin.list = Perez's bulletins list
+master.menu.anonymous.perezBulletin.create = New Perez's bulletin
 
-master.menu.anonymous.lobatoBulletin.list = Lista de lobatoBulletins
-master.menu.anonymous.lobatoBulletin.create = Crear lobatoBulletin
+master.menu.anonymous.lobatoBulletin.list = LobatoBulletins' list
+master.menu.anonymous.lobatoBulletin.create = New LobatoBulletin
 
 # master.menu.administrator ###################################################
 
@@ -76,8 +76,8 @@ master.menu.administrator.customization = Parámetros de customización
 master.menu.administrator.challenge.list = Desafíos
 master.menu.administrator.challenge.create = Nuevo Desafío
 master.menu.administrator.shutdown = Parar el sistema
-master.menu.administrator.tool-record.create = Crear Registro de herramientas
-master.menu.administrator.technology-record.create = Crear Registro de Tecnologia
+master.menu.administrator.tool-record.create = Crear Registro de Herramientas
+master.menu.administrator.technology-record.create = Crear Registro de Tecnología
 
 # master.menu.authenticated ###################################################
 

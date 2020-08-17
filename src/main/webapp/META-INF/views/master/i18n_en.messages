@@ -42,23 +42,23 @@ master.menu.anonymous.joslobtro-favourite-link = joslobtro's favourite link
 
 # master.menu.anonymous.bulletin #######################################################
 
-master.menu.bulletins.list = Bulletins list
-master.menu.bulletins.create = Create a bulletin
+master.menu.bulletins.list = Lista de bulletins
+master.menu.bulletins.create = Crear un bulletin
 
-master.menu.anonymous.guerrero-bulletin.list = Guerrero's bulletins list
-master.menu.anonymous.guerreroBulletin.create =  Create a Guerrero bulletin
+master.menu.anonymous.guerrero-bulletin.list = Lista de boletines de Guerrero
+master.menu.anonymous.guerreroBulletin.create = Crear boletín de Guerrero
 
-master.menu.anonymous.escobar-bulletin.list = EscobarBulletins' List
-master.menu.anonymous.escobar-bulletin.create = New EscobarBulletin
+master.menu.anonymous.escobar-bulletin.list = Lista de EscobarBulletins
+master.menu.anonymous.escobar-bulletin.create = Nuevo EscobarBulletin
 
-master.menu.bulletins.horrillo-bulletin.list = Horrillo bulletin
-master.menu.bulletins.horrillo-bulletin.create = New Horrillo bulletin
+master.menu.bulletins.horrillo-bulletin.list = Lista de HorrilloBulletins
+master.menu.bulletins.horrillo-bulletin.create = Nuevo HorrilloBulletin
 
-master.menu.anonymous.perezBulletin.list = List Brayan's bulletins
-master.menu.anonymous.perezBulletin.create = Create Brayan's bulletin
+master.menu.anonymous.perezBulletin.list = Lista de boletines de Perez
+master.menu.anonymous.perezBulletin.create = Crear boletín de Perez
 
-master.menu.anonymous.lobatoBulletin.list = List of lobatoBulletins
-master.menu.anonymous.lobatoBulletin.create = Create lobatoBulletin
+master.menu.anonymous.lobatoBulletin.list = Lista de LobatoBulletins
+master.menu.anonymous.lobatoBulletin.create = Nuevo LobatoBulletin
 
 # master.menu.administrator ###################################################
 
