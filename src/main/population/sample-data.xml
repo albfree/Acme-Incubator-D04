@@ -380,7 +380,7 @@
 
 	<bean id="accountingRecord01" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Balance" />
-		<property name="status" value="DRAFT" />
+		<property name="status" value="PUBLISHED" />
 		<property name="creationMoment" value="2020/06/20 12:00" />
 		<property name="body" value="Tax returns: 10 years" />
 		<property name="bookkeeper" ref="bookkeeperBookkeeper" />
@@ -706,7 +706,7 @@
 	<bean name="investor01Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="investor01UserAccount"/>
 	</bean>
-	
+
 	<bean name="investor02UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="investor02"/>	
 		<property name="password" value="investor02"/>

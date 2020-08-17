@@ -137,6 +137,12 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.entrepreneur.application.list-mine" action="/entrepreneur/application/list-mine" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+			<acme:menu-suboption code="master.menu.bookkeeper.investment-round.list-mine" action="/bookkeeper/investment-round/list-mine" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.bookkeeper.investment-round.list-not-mine" action="/bookkeeper/investment-round/list-not-mine" />
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

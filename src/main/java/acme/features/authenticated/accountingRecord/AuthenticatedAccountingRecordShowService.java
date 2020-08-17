@@ -4,41 +4,57 @@ package acme.features.authenticated.accountingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.customizations.Customization;
+import acme.entities.records.AccountingRecord;
+import acme.entities.roles.Bookkeeper;
+import acme.entities.status.Status;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Administrator;
+import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedAccountingRecordShowService implements AbstractShowService<Administrator, Customization> {
+public class AuthenticatedAccountingRecordShowService implements AbstractShowService<Authenticated, AccountingRecord> {
 
 	@Autowired
 	private AuthenticatedAccountingRecordRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Customization> request) {
+	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int accountingId;
+		Bookkeeper bookkeeper;
+		AccountingRecord accountingRecord;
+		Principal principal;
+
+		principal = request.getPrincipal();
+		accountingId = request.getModel().getInteger("id");
+		accountingRecord = this.repository.findOneById(accountingId);
+		bookkeeper = accountingRecord.getBookkeeper();
+		result = accountingRecord.getStatus() == Status.PUBLISHED || accountingRecord.getStatus() == Status.DRAFT && bookkeeper.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
+
 	}
 
 	@Override
-	public void unbind(final Request<Customization> request, final Customization entity, final Model model) {
+	public void unbind(final Request<AccountingRecord> request, final AccountingRecord entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "spamWords", "threshold", "activitySectors");
+		request.unbind(entity, model, "title", "status", "creationMoment", "body", "bookkeeper.userAccount.identity.fullName", "investmentRound.ticker");
 
 	}
 
 	@Override
-	public Customization findOne(final Request<Customization> request) {
+	public AccountingRecord findOne(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		Customization result;
+		AccountingRecord result;
 		int id;
 
 		id = request.getModel().getInteger("id");

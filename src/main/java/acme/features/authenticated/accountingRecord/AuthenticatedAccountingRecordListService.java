@@ -32,7 +32,7 @@ public class AuthenticatedAccountingRecordListService implements AbstractListSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, );
+		request.unbind(entity, model, "creationMoment", "title", "status");
 	}
 
 	@Override
@@ -40,8 +40,11 @@ public class AuthenticatedAccountingRecordListService implements AbstractListSer
 		assert request != null;
 
 		Collection<AccountingRecord> result;
+		int ivID;
 
-		result = this.repository.findMany();
+		ivID = request.getModel().getInteger("id");
+
+		result = this.repository.findManyPublishedByInvestmentRoundId(ivID);
 
 		return result;
 	}

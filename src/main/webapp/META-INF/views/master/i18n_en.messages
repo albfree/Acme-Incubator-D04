@@ -109,6 +109,12 @@ master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.investment-round.list-mine = My investment rounds' list
 master.menu.entrepreneur.application.list-mine = Applications to my investment rounds
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment-round.list-mine = Investment rounds with accounting records
+master.menu.bookkeeper.investment-round.list-not-mine = Investment rounds without accounting records
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

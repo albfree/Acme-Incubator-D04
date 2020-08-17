@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.customizations.Customization;
+import acme.entities.records.AccountingRecord;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Administrator;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/administrator/customization/")
-public class AuthenticatedAccountingRecordController extends AbstractController<Administrator, Customization> {
+@RequestMapping("/authenticated/accounting-record/")
+public class AuthenticatedAccountingRecordController extends AbstractController<Authenticated, AccountingRecord> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -24,9 +24,6 @@ public class AuthenticatedAccountingRecordController extends AbstractController<
 	@Autowired
 	private AuthenticatedAccountingRecordShowService	showService;
 
-	@Autowired
-	private AdministratorCustomizationUpdateService	updateService;
-
 
 	// Constructors -----------------------------------------------------------
 
@@ -34,7 +31,7 @@ public class AuthenticatedAccountingRecordController extends AbstractController<
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+
 	}
 
 }

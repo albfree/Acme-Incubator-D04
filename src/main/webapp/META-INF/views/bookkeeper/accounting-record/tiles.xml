@@ -7,12 +7,12 @@
 
 <tiles-definitions>
 
-	<definition name="bookkeeper/accounting-records/list" extends="master">
-		<put-attribute name="body" type="template" value="../bookkeeper/accounting-records/list.jsp" />
+	<definition name="bookkeeper/accounting-record/list" extends="master">
+		<put-attribute name="body" type="template" value="../bookkeeper/accounting-record/list.jsp" />
 	</definition>
 
-	<definition name="bookkeeper/accounting-records/form" extends="master">
-		<put-attribute name="body" type="template" value="../bookkeeper/accounting-records/form.jsp" />
+	<definition name="bookkeeper/accounting-record/form" extends="master">
+		<put-attribute name="body" type="template" value="../bookkeeper/accounting-record/form.jsp" />
 	</definition>
 
 </tiles-definitions>
