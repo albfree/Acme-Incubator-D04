@@ -24,9 +24,6 @@ public class AuthenticatedAccountingRecordController extends AbstractController<
 	@Autowired
 	private AuthenticatedAccountingRecordShowService	showService;
 
-	@Autowired
-	private AuthenticatedAccountingRecordUpdateService	updateService;
-
 
 	// Constructors -----------------------------------------------------------
 

@@ -1,7 +1,6 @@
 
 package acme.features.bookkeeper.investmentRound;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,16 +42,9 @@ public class BookkeeperInvestmentRoundListMineService implements AbstractListSer
 		assert request != null;
 
 		Principal principal;
-		Collection<InvestmentRound> result = new ArrayList<>();
 
 		principal = request.getPrincipal();
-		Collection<InvestmentRound> temporalResult = this.repository.findManyInvestmentRoundByAC(principal.getActiveRoleId());
-
-		for (InvestmentRound iv : temporalResult) {
-			if (iv.sumActivitiesBudgets() == true) {
-				result.add(iv);
-			}
-		}
+		Collection<InvestmentRound> result = this.repository.findInvestmentRoundsWithMyAccounting(principal.getActiveRoleId());
 
 		return result;
 	}

@@ -375,185 +375,6 @@
 			<null />
 		</property>
 	</bean>
-
-	<!-- Accounting records -->
-
-	<bean id="accountingRecord01" class="acme.entities.records.AccountingRecord">
-		<property name="title" value="Balance" />
-		<property name="status" value="PUBLISHED" />
-		<property name="creationMoment" value="2020/06/20 12:00" />
-		<property name="body" value="Tax returns: 10 years" />
-		<property name="bookkeeper" ref="bookkeeperBookkeeper" />
-		<property name="investmentRound" ref="investmentRound01" />
-
-	</bean>
-
-	<bean id="accountingRecord02" class="acme.entities.records.AccountingRecord">
-		<property name="title" value="Balance" />
-		<property name="status" value="DRAFT" />
-		<property name="creationMoment" value="2020/06/21 11:00" />
-		<property name="body" value="Financial report: monthly" />
-		<property name="bookkeeper" ref="bookkeeperBookkeeper" />
-		<property name="investmentRound" ref="investmentRound01" />
-
-	</bean>
-
-	<bean id="accountingRecord03" class="acme.entities.records.AccountingRecord">
-		<property name="title" value="Evaluation report" />
-		<property name="status" value="PUBLISHED" />
-		<property name="creationMoment" value="2020/06/20 12:00" />
-		<property name="body" value="Tax returns: 10 years" />
-		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
-		<property name="investmentRound" ref="investmentRound02" />
-
-	</bean>
-
-	<bean id="accountingRecord04" class="acme.entities.records.AccountingRecord">
-		<property name="title" value="Evaluation report" />
-		<property name="status" value="DRAFT" />
-		<property name="creationMoment" value="2020/06/21 18:00" />
-		<property name="body" value="Financial report: monthly" />
-		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
-		<property name="investmentRound" ref="investmentRound02" />
-
-	</bean>
-
-
-	
-	<!-- Activity -->
-	
-	<bean id="activity01" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 01"/>
-		<property name="startDateTime" value="2020/08/2 00:00"/>
-		<property name="endDateTime" value="2020/08/10 23:59"/>
-		<property name="budget">
-			<ref bean="money01"/>
-		</property>
-		<property name="investment" ref="investmentRound01" />
-	</bean>
-
-	<bean id="activity02" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 02"/>
-		<property name="startDateTime" value="2020/07/21 00:00"/>
-		<property name="endDateTime" value="2020/08/1 23:59"/>
-		<property name="budget">
-			<ref bean="money02"/>
-		</property>
-		<property name="investment" ref="investmentRound01" />
-	</bean>
-
-	<bean id="activity03" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 03"/>
-		<property name="startDateTime" value="2020/08/4 00:00"/>
-		<property name="endDateTime" value="2020/08/17 23:59"/>
-		<property name="budget">
-			<ref bean="money03"/>
-		</property>
-		<property name="investment" ref="investmentRound02" />
-	</bean>
-	
-	<bean id="activity04" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 04"/>
-		<property name="startDateTime" value="2020/08/10 00:00"/>
-		<property name="endDateTime" value="2020/08/17 23:59"/>
-		<property name="budget">
-			<ref bean="money01"/>
-		</property>
-		<property name="investment" ref="investmentRound02" />
-	</bean>
-	
-	<bean id="activity05" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 05"/>
-		<property name="startDateTime" value="2020/08/12 00:00"/>
-		<property name="endDateTime" value="2020/08/19 23:59"/>
-		<property name="budget">
-			<ref bean="money02"/>
-		</property>
-		<property name="investment" ref="investmentRound02" />
-	</bean>
-	
-	<bean id="activity06" class="acme.entities.activities.Activity">
-		<property name="title" value="Activity 06"/>
-		<property name="startDateTime" value="2020/08/11 00:00"/>
-		<property name="endDateTime" value="2020/08/12 23:59"/>
-		<property name="budget">
-			<ref bean="money04"/>
-		</property>
-		<property name="investment" ref="investmentRound03" />
-	</bean>
-	
-	<!-- Investment rounds -->
-	
-	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="VID-20-000001" />
-		<property name="creationDate" value="2020/08/06 16:00" />
-		<property name="kindOfRound" value="ANGEL" />
-		<property name="title" value="God of War II" />
-		<property name="description" value="La secuela del mejor videojuego de la historia." />
-		<property name="amount">
-			<ref bean="money03"/>
-		</property>
-		<property name="optionalLink" value="https://www.youtube.com" />
-		<property name="workProgramme">
-			<list>
-				<ref bean="activity01" />
-				<ref bean="activity02" />
-			</list>
-		</property>
-		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
-	</bean>
-	
-	<bean name="investmentRound02" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="VID-20-000002" />
-		<property name="creationDate" value="2020/08/07 17:00" />
-		<property name="kindOfRound" value="SERIES-A" />
-		<property name="title" value="Red Dead Redemption 3" />
-		<property name="description" value="La secuela de la secuela del mejor videojuego de la historia." />
-		<property name="amount">
-			<ref bean="money05"/>
-		</property>
-		<property name="optionalLink" value="https://www.youtube.com" />
-		<property name="workProgramme">
-			<list>
-				<ref bean="activity03" />
-				<ref bean="activity04" />
-				<ref bean="activity05" />
-			</list>
-		</property>
-		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
-	</bean>
-	
-	<bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="CAR-20-000003" />
-		<property name="creationDate" value="2020/08/10 18:00" />
-		<property name="kindOfRound" value="SERIES-C" />
-		<property name="title" value="Amazon 2.0" />
-		<property name="description" value="El próximo Amazon." />
-		<property name="amount">
-			<ref bean="money04"/>
-		</property>
-		<property name="optionalLink" value="https://www.twitter.com" />
-		<property name="workProgramme">
-			<list>
-			<ref bean="activity06" />
-			</list>
-		</property>
-		<property name="entrepreneur" ref="entrepreneur02Entrepreneur" />
-	</bean>
-	
-	<!-- Applications to Investment rounds -->
-	
-	<bean name="application01" class="acme.entities.applications.Application">
-		<property name="ticker" value="SPO-20-000003" />
-		<property name="creationDate" value="2020/08/07 16:30" />
-		<property name="statement" value="Vamos a ser los próximos mil-millonarios." />
-		<property name="investmentOffer">
-			<ref bean="money03"/>
-		</property>
-		<property name="status" value="PENDING" />
-		<property name="investment" ref="investmentRound02" />
-		<property name="investor" ref="investor01Investor" />
-	</bean>
 	
 	<!-- Users -->
 
@@ -577,38 +398,6 @@
 
 	<bean name="user01Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="user01UserAccount" />
-	</bean>
-
-
-	<!-- Bookkeeper user -->
-
-	<bean name="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="bookkeeper" />
-		<property name="password" value="bookkeeper" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Bookkeeper" />
-				<property name="surname" value="Johnson" />
-				<property name="email" value="book.john@acme.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="bookkeeperBookkeeper" />
-				<ref bean="bookkeeperAuthenticated" />
-			</list>
-		</property>
-	</bean>
-
-	<bean name="bookkeeperBookkeeper" class="acme.entities.roles.Bookkeeper">
-		<property name="userAccount" ref="bookkeeper1UserAccount" />
-		<property name="firmName" value="Bookkeeper INC." />
-		<property name="responsibilityStatement" value="I am responsible. X" />
-	</bean>
-
-	<bean name="bookkeeperAuthenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="bookkeeper1UserAccount" />
 	</bean>
 	
 	<!-- Entrepreneurs -->
@@ -736,10 +525,41 @@
 	<bean name="investor02Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
+	
+	<!-- Bookkeepers -->
+	
+	<bean name="bookkeeper01UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper01" />
+		<property name="password" value="bookkeeper01" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Bookkeeper" />
+				<property name="surname" value="Johnson" />
+				<property name="email" value="book.john@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper01Bookkeeper" />
+				<ref bean="bookkeeper01Authenticated" />
+			</list>
+		</property>
+	</bean>
 
-	<bean name="bookkeeper2UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="bookkeeper2" />
-		<property name="password" value="bookkeeper2" />
+	<bean name="bookkeeper01Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="userAccount" ref="bookkeeper01UserAccount" />
+		<property name="firmName" value="Bookkeeper INC." />
+		<property name="responsibilityStatement" value="I am responsible." />
+	</bean>
+
+	<bean name="bookkeeper01Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper01UserAccount" />
+	</bean>
+
+	<bean name="bookkeeper02UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper02" />
+		<property name="password" value="bookkeeper02" />
 		<property name="enabled" value="true" />
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
@@ -750,19 +570,239 @@
 		</property>
 		<property name="roles">
 			<list>
-				<ref bean="bookkeeper2Bookkeeper" />
-				<ref bean="bookkeeper2Authenticated" />
+				<ref bean="bookkeeper02Bookkeeper" />
+				<ref bean="bookkeeper02Authenticated" />
 			</list>
 		</property>
 	</bean>
 
-	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
-		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	<bean name="bookkeeper02Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="userAccount" ref="bookkeeper02UserAccount" />
 		<property name="firmName" value="Bookkeeper SL." />
-		<property name="responsibilityStatement" value="I am responsible. X" />
+		<property name="responsibilityStatement" value="I am responsible two." />
 	</bean>
 
-	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	<bean name="bookkeeper02Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper02UserAccount" />
 	</bean>
+	
+	<!-- Activity -->
+	
+	<bean id="activity01" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 01"/>
+		<property name="startDateTime" value="2020/08/2 00:00"/>
+		<property name="endDateTime" value="2020/08/10 23:59"/>
+		<property name="budget">
+			<ref bean="money01"/>
+		</property>
+		<property name="investment" ref="investmentRound01" />
+	</bean>
+
+	<bean id="activity02" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 02"/>
+		<property name="startDateTime" value="2020/07/21 00:00"/>
+		<property name="endDateTime" value="2020/08/1 23:59"/>
+		<property name="budget">
+			<ref bean="money02"/>
+		</property>
+		<property name="investment" ref="investmentRound01" />
+	</bean>
+
+	<bean id="activity03" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 03"/>
+		<property name="startDateTime" value="2020/08/4 00:00"/>
+		<property name="endDateTime" value="2020/08/17 23:59"/>
+		<property name="budget">
+			<ref bean="money03"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity04" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 04"/>
+		<property name="startDateTime" value="2020/08/10 00:00"/>
+		<property name="endDateTime" value="2020/08/17 23:59"/>
+		<property name="budget">
+			<ref bean="money01"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity05" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 05"/>
+		<property name="startDateTime" value="2020/08/12 00:00"/>
+		<property name="endDateTime" value="2020/08/19 23:59"/>
+		<property name="budget">
+			<ref bean="money02"/>
+		</property>
+		<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity06" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 06"/>
+		<property name="startDateTime" value="2020/08/11 00:00"/>
+		<property name="endDateTime" value="2020/08/12 23:59"/>
+		<property name="budget">
+			<ref bean="money04"/>
+		</property>
+		<property name="investment" ref="investmentRound03" />
+	</bean>
+	
+	<bean id="activity07" class="acme.entities.activities.Activity">
+		<property name="title" value="Activity 07"/>
+		<property name="startDateTime" value="2020/08/15 00:00"/>
+		<property name="endDateTime" value="2020/08/16 23:59"/>
+		<property name="budget">
+			<ref bean="money05"/>
+		</property>
+		<property name="investment" ref="investmentRound04" />
+	</bean>
+	
+	<!-- Investment rounds -->
+	
+	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="VID-20-000001" />
+		<property name="creationDate" value="2020/08/06 16:00" />
+		<property name="kindOfRound" value="ANGEL" />
+		<property name="title" value="God of War II" />
+		<property name="description" value="La secuela del mejor videojuego de la historia." />
+		<property name="amount">
+			<ref bean="money03"/>
+		</property>
+		<property name="optionalLink" value="https://www.youtube.com" />
+		<property name="workProgramme">
+			<list>
+				<ref bean="activity01" />
+				<ref bean="activity02" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
+	</bean>
+	
+	<bean name="investmentRound02" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="VID-20-000002" />
+		<property name="creationDate" value="2020/08/07 17:00" />
+		<property name="kindOfRound" value="SERIES-A" />
+		<property name="title" value="Red Dead Redemption 3" />
+		<property name="description" value="La secuela de la secuela del mejor videojuego de la historia." />
+		<property name="amount">
+			<ref bean="money05"/>
+		</property>
+		<property name="optionalLink" value="https://www.youtube.com" />
+		<property name="workProgramme">
+			<list>
+				<ref bean="activity03" />
+				<ref bean="activity04" />
+				<ref bean="activity05" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur01Entrepreneur" />
+	</bean>
+	
+	<bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="CAR-20-000003" />
+		<property name="creationDate" value="2020/08/10 18:00" />
+		<property name="kindOfRound" value="SERIES-C" />
+		<property name="title" value="Amazon 2.0" />
+		<property name="description" value="El próximo Amazon." />
+		<property name="amount">
+			<ref bean="money04"/>
+		</property>
+		<property name="optionalLink" value="https://www.twitter.com" />
+		<property name="workProgramme">
+			<list>
+			<ref bean="activity06" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur02Entrepreneur" />
+	</bean>
+	
+	<bean name="investmentRound04" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="CAR-20-000004" />
+		<property name="creationDate" value="2020/08/17 18:00" />
+		<property name="kindOfRound" value="ANGEL" />
+		<property name="title" value="Facebook 2.0" />
+		<property name="description" value="El próximo Facebook." />
+		<property name="amount">
+			<ref bean="money05"/>
+		</property>
+		<property name="optionalLink" value="https://www.facebook.com" />
+		<property name="workProgramme">
+			<list>
+			<ref bean="activity07" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur02Entrepreneur" />
+	</bean>
+	
+	<!-- Accounting records -->
+
+	<bean id="accountingRecord01" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Balance" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="body" value="Tax returns: 10 years" />
+		<property name="bookkeeper" ref="bookkeeper01Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+	</bean>
+
+	<bean id="accountingRecord02" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Balance" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/21 11:00" />
+		<property name="body" value="Financial report: monthly" />
+		<property name="bookkeeper" ref="bookkeeper01Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+	</bean>
+
+	<bean id="accountingRecord03" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="body" value="Tax returns: 10 years" />
+		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound03" />
+	</bean>
+
+	<bean id="accountingRecord04" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/21 18:00" />
+		<property name="body" value="Financial report: monthly" />
+		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound03" />
+	</bean>
+	
+	<bean id="accountingRecord05" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2020/06/20 13:00" />
+		<property name="body" value="Tax returns: 5 years" />
+		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+	</bean>
+
+	<bean id="accountingRecord06" class="acme.entities.records.AccountingRecord">
+		<property name="title" value="Evaluation report" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2020/06/21 19:00" />
+		<property name="body" value="Financial report: weekly" />
+		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound01" />
+	</bean>
+	
+	<!-- Applications to Investment rounds -->
+	
+	<bean name="application01" class="acme.entities.applications.Application">
+		<property name="ticker" value="SPO-20-000003" />
+		<property name="creationDate" value="2020/08/07 16:30" />
+		<property name="statement" value="Vamos a ser los próximos mil-millonarios." />
+		<property name="investmentOffer">
+			<ref bean="money03"/>
+		</property>
+		<property name="status" value="PENDING" />
+		<property name="investment" ref="investmentRound02" />
+		<property name="investor" ref="investor01Investor" />
+	</bean>
+	
 </beans>

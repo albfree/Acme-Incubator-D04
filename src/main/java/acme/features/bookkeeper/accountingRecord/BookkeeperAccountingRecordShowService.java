@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.records.AccountingRecord;
 import acme.entities.roles.Bookkeeper;
-import acme.entities.status.Status;
+import acme.entities.status.StatusAccounting;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -31,9 +31,9 @@ public class BookkeeperAccountingRecordShowService implements AbstractShowServic
 
 		principal = request.getPrincipal();
 		accountingId = request.getModel().getInteger("id");
-		accountingRecord = this.repository.findOneById(accountingId);
+		accountingRecord = this.repository.findOneAccountingRecordById(accountingId);
 		bookkeeper = accountingRecord.getBookkeeper();
-		result = accountingRecord.getStatus() == Status.PUBLISHED || accountingRecord.getStatus() == Status.DRAFT && bookkeeper.getUserAccount().getId() == principal.getAccountId();
+		result = accountingRecord.getStatus() == StatusAccounting.PUBLISHED || accountingRecord.getStatus() == StatusAccounting.DRAFT && bookkeeper.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 
@@ -57,7 +57,7 @@ public class BookkeeperAccountingRecordShowService implements AbstractShowServic
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOneAccountingRecordById(id);
 
 		return result;
 	}

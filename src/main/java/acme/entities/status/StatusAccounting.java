@@ -1,7 +1,7 @@
 
 package acme.entities.status;
 
-public enum Status {
+public enum StatusAccounting {
 
 	DRAFT, PUBLISHED
 }

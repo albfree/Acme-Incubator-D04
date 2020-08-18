@@ -42,11 +42,12 @@ public class BookkeeperInvestmentRoundListNotMineService implements AbstractList
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		Principal principal;
 		Collection<InvestmentRound> result = new ArrayList<>();
+		Collection<InvestmentRound> temporalResult;
+		Principal principal;
 
 		principal = request.getPrincipal();
-		Collection<InvestmentRound> temporalResult = this.repository.findManyInvestmentRoundNotByAC(principal.getActiveRoleId());
+		temporalResult = this.repository.findInvestmentRoundsWithoutMyAccounting(principal.getActiveRoleId());
 
 		for (InvestmentRound iv : temporalResult) {
 			if (iv.sumActivitiesBudgets() == true) {

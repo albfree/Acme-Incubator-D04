@@ -14,7 +14,7 @@ import javax.validation.constraints.Past;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Bookkeeper;
-import acme.entities.status.Status;
+import acme.entities.status.StatusAccounting;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +31,7 @@ public class AccountingRecord extends DomainEntity {
 	private String				title;
 
 	@NotNull
-	private Status				status;
+	private StatusAccounting				status;
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)

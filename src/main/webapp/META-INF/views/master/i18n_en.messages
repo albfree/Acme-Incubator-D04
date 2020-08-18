@@ -112,8 +112,8 @@ master.menu.entrepreneur.application.list-mine = Applications to my investment r
 # master.menu.bookkeeper ###################################################
 
 master.menu.bookkeeper = Bookkeeper
-master.menu.bookkeeper.investment-round.list-mine = Investment rounds with accounting records
-master.menu.bookkeeper.investment-round.list-not-mine = Investment rounds without accounting records
+master.menu.bookkeeper.investment-round.list-mine = Investment rounds with my accounting records
+master.menu.bookkeeper.investment-round.list-not-mine = Investment rounds without my accounting records
 
 # master.menu.user-account ####################################################
 
