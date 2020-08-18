@@ -64,11 +64,11 @@ bg=blue</panel_attributes>
     <coordinates>
       <x>1200</x>
       <y>232</y>
-      <w>424</w>
-      <h>216</h>
+      <w>600</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;510.0;250.0</additional_attributes>
+    <additional_attributes>10.0;10.0;730.0;260.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -154,12 +154,13 @@ bg=yellow</panel_attributes>
       <x>296</x>
       <y>232</y>
       <w>176</w>
-      <h>56</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
 + LIST_MINE
++ LIST_NOT_MINE
 
 bg=orange</panel_attributes>
     <additional_attributes/>
@@ -182,8 +183,8 @@ Provider
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1528</x>
-      <y>432</y>
+      <x>1704</x>
+      <y>440</y>
       <w>168</w>
       <h>88</h>
     </coordinates>
@@ -706,7 +707,7 @@ Consumer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1568</x>
+      <x>1608</x>
       <y>856</y>
       <w>344</w>
       <h>128</h>
@@ -721,5 +722,50 @@ AccountingRecord
 + bookkeeper: Bookkeeper {ManyToOne(optional = false), NotNull, Valid}
 + investmentRound: InvestmentRound {ManyToOne(optional = false), NotNull, Valid}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>320</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+StatusAccounting
+--
++ DRAFT
++ PUBLISHED
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1432</x>
+      <y>896</y>
+      <w>192</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1784</x>
+      <y>520</y>
+      <w>88</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1= 1
+m2=  0..*
+created by ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;420.0</additional_attributes>
   </element>
 </diagram>
