@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.accountingRecord;
+package acme.features.entrepreneur.accountingRecord;
 
 import java.util.Collection;
 
@@ -8,30 +8,36 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.records.AccountingRecord;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedAccountingRecordListService implements AbstractListService<Authenticated, AccountingRecord> {
+public class EntrepreneurAccountingRecordListService implements AbstractListService<Entrepreneur, AccountingRecord> {
 
 	@Autowired
-	AuthenticatedAccountingRecordRepository repository;
+	EntrepreneurAccountingRecordRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		int ivID;
+		boolean result;
+		int investmentID;
 		InvestmentRound investment;
+		Entrepreneur entrepreneur;
+		Principal principal;
 
-		ivID = request.getModel().getInteger("id");
+		investmentID = request.getModel().getInteger("id");
+		investment = this.repository.findOneInvestmentRoundById(investmentID);
+		entrepreneur = investment.getEntrepreneur();
+		principal = request.getPrincipal();
 
-		investment = this.repository.findOneInvestmentRoundById(ivID);
-
-		return investment.sumActivitiesBudgets();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+		return result;
 	}
 
 	@Override
