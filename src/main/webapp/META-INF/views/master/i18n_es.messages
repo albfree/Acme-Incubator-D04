@@ -109,6 +109,12 @@ master.menu.entrepreneur = Emprendedor
 master.menu.entrepreneur.investment-round.list-mine = Lista de mis rondas de inversión
 master.menu.entrepreneur.application.list-mine = Solicitudes a mis rondas de inversión
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Contable
+master.menu.bookkeeper.investment-round.list-mine = Rondas de inversión con mis registros contables
+master.menu.bookkeeper.investment-round.list-not-mine = Rondas de inversión sin mis registros contables
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

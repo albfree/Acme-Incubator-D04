@@ -27,6 +27,8 @@
 	
 	<acme:form-submit method="get" code="authenticated.investment-round.form.button.work-programme"
 		action="/authenticated/activity/list?id=${ivID}" />
+	<acme:form-submit method="get" code="authenticated.investment-round.form.button.accounting-records"
+		action="/authenticated/accounting-record/list?id=${ivID}" />
 
 	<acme:form-return code="authenticated.investment-round.form.button.return"/>
 

@@ -20,5 +20,6 @@ authenticated.investment-round.form.label.description = Description
 authenticated.investment-round.form.label.amount = Amount
 authenticated.investment-round.form.label.optional-link = Optional link
 authenticated.investment-round.form.button.work-programme = Show work programme
+authenticated.investment-round.form.button.accounting-records = Show accounting records
 
 authenticated.investment-round.form.button.return = Return
