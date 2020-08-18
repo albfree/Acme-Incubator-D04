@@ -15,7 +15,7 @@
 	<acme:form-url code="bookkeeper.investment-round.form.label.optional-link" path="optionalLink" />
 
 	<acme:form-submit method="get" code="bookkeeper.investment-round.form.button.work-programme"
-		action="/authenticated/activity/list?id=${ivID}" />
+		action="/bookkeeper/activity/list?id=${ivID}" />
 	<acme:form-submit method="get" code="bookkeeper.investment-round.form.button.accounting-records"
 		action="/bookkeeper/accounting-record/list?id=${ivID}" />
 
