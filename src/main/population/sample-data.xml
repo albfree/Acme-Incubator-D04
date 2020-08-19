@@ -590,7 +590,7 @@
 	
 	<bean id="activity01" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 01"/>
-		<property name="startDateTime" value="2020/08/2 00:00"/>
+		<property name="startDateTime" value="2020/08/8 11:00"/>
 		<property name="endDateTime" value="2020/08/10 23:59"/>
 		<property name="budget">
 			<ref bean="money01"/>
@@ -600,8 +600,8 @@
 
 	<bean id="activity02" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 02"/>
-		<property name="startDateTime" value="2020/07/21 00:00"/>
-		<property name="endDateTime" value="2020/08/1 23:59"/>
+		<property name="startDateTime" value="2020/08/7 10:00"/>
+		<property name="endDateTime" value="2020/08/10 23:59"/>
 		<property name="budget">
 			<ref bean="money02"/>
 		</property>
@@ -610,7 +610,7 @@
 
 	<bean id="activity03" class="acme.entities.activities.Activity">
 		<property name="title" value="Activity 03"/>
-		<property name="startDateTime" value="2020/08/4 00:00"/>
+		<property name="startDateTime" value="2020/08/8 00:00"/>
 		<property name="endDateTime" value="2020/08/17 23:59"/>
 		<property name="budget">
 			<ref bean="money03"/>
@@ -719,7 +719,7 @@
 	
 	<bean name="investmentRound04" class="acme.entities.investmentRounds.InvestmentRound">
 		<property name="ticker" value="SCI-20-000004" />
-		<property name="creationDate" value="2020/08/17 18:00" />
+		<property name="creationDate" value="2020/08/14 18:00" />
 		<property name="kindOfRound" value="ANGEL" />
 		<property name="title" value="Facebook 2.0" />
 		<property name="description" value="El próximo Facebook." />
@@ -740,7 +740,7 @@
 	<bean id="accountingRecord01" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Balance" />
 		<property name="status" value="PUBLISHED" />
-		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="creationMoment" value="2020/08/7 12:00" />
 		<property name="body" value="Tax returns: 10 years" />
 		<property name="bookkeeper" ref="bookkeeper01Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound01" />
@@ -749,7 +749,7 @@
 	<bean id="accountingRecord02" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Balance" />
 		<property name="status" value="DRAFT" />
-		<property name="creationMoment" value="2020/06/21 11:00" />
+		<property name="creationMoment" value="2020/08/15 11:00" />
 		<property name="body" value="Financial report: monthly" />
 		<property name="bookkeeper" ref="bookkeeper01Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound01" />
@@ -758,7 +758,7 @@
 	<bean id="accountingRecord03" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Evaluation report" />
 		<property name="status" value="PUBLISHED" />
-		<property name="creationMoment" value="2020/06/20 12:00" />
+		<property name="creationMoment" value="2020/08/11 12:00" />
 		<property name="body" value="Tax returns: 10 years" />
 		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound03" />
@@ -767,7 +767,7 @@
 	<bean id="accountingRecord04" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Evaluation report" />
 		<property name="status" value="DRAFT" />
-		<property name="creationMoment" value="2020/06/21 18:00" />
+		<property name="creationMoment" value="2020/08/12 18:00" />
 		<property name="body" value="Financial report: monthly" />
 		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound03" />
@@ -776,7 +776,7 @@
 	<bean id="accountingRecord05" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Evaluation report" />
 		<property name="status" value="PUBLISHED" />
-		<property name="creationMoment" value="2020/06/20 13:00" />
+		<property name="creationMoment" value="2020/08/12 13:00" />
 		<property name="body" value="Tax returns: 5 years" />
 		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound01" />
@@ -785,7 +785,7 @@
 	<bean id="accountingRecord06" class="acme.entities.records.AccountingRecord">
 		<property name="title" value="Evaluation report" />
 		<property name="status" value="DRAFT" />
-		<property name="creationMoment" value="2020/06/21 19:00" />
+		<property name="creationMoment" value="2020/08/14 19:00" />
 		<property name="body" value="Financial report: weekly" />
 		<property name="bookkeeper" ref="bookkeeper02Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound01" />
@@ -807,7 +807,7 @@
 	
 	<bean name="application02" class="acme.entities.applications.Application">
 		<property name="ticker" value="BUS-20-000004" />
-		<property name="creationDate" value="2020/08/08 16:30" />
+		<property name="creationDate" value="2020/08/14 16:30" />
 		<property name="statement" value="Vamos a por todas." />
 		<property name="investmentOffer">
 			<ref bean="money04"/>
@@ -876,7 +876,7 @@
 	
 	<bean name="message01Forum01" class="acme.entities.messages.Message">
 		<property name="title" value="Mensaje 01"/>
-		<property name="creationMoment" value="2020/07/10 12:33"/>
+		<property name="creationMoment" value="2020/08/10 12:33"/>
 		<property name="tags" value=""/>
 		<property name="body" value="Cuerpo del primer mensaje."/>
 		<property name="forum" ref="forum01" />
@@ -885,7 +885,7 @@
 	
 	<bean name="message02Forum01" class="acme.entities.messages.Message">
 		<property name="title" value="Mensaje 02"/>
-		<property name="creationMoment" value="2020/07/12 13:43"/>
+		<property name="creationMoment" value="2020/08/12 13:43"/>
 		<property name="tags" value="tag1"/>
 		<property name="body" value="Cuerpo del segundo mensaje."/>
 		<property name="forum" ref="forum01" />
@@ -894,7 +894,7 @@
 	
 	<bean name="message03Forum01" class="acme.entities.messages.Message">
 		<property name="title" value="Mensaje 03"/>
-		<property name="creationMoment" value="2020/07/18 22:01"/>
+		<property name="creationMoment" value="2020/08/18 22:01"/>
 		<property name="tags" value="tag1, tag2"/>
 		<property name="body" value="Cuerpo del tercer mensaje."/>
 		<property name="forum" ref="forum01" />
@@ -903,7 +903,7 @@
 	
 	<bean name="message01Forum02" class="acme.entities.messages.Message">
 		<property name="title" value="Mensaje 01"/>
-		<property name="creationMoment" value="2020/07/15 22:06"/>
+		<property name="creationMoment" value="2020/08/15 22:06"/>
 		<property name="tags" value="tag1, tag2, tag3"/>
 		<property name="body" value="Cuerpo del primer mensaje."/>
 		<property name="forum" ref="forum02" />
