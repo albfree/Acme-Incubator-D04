@@ -526,6 +526,36 @@
 		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
 	
+	<bean name="investor03UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor03"/>	
+		<property name="password" value="investor03"/>
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Three" />
+				<property name="email" value="investor03@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor03Investor"/>
+				<ref bean="investor03Authenticated"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean name="investor03Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="YouTube"/>
+		<property name="activitySector" value="Technology"/>
+		<property name="profile" value="Youtuber"/>
+		<property name="userAccount" ref="investor03UserAccount"/>
+	</bean>
+	
+	<bean name="investor03Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor03UserAccount"/>
+	</bean>
+	
 	<!-- Bookkeepers -->
 	
 	<bean name="bookkeeper01UserAccount" class="acme.framework.entities.UserAccount">
@@ -841,6 +871,18 @@
 		<property name="investor" ref="investor02Investor" />
 	</bean>
 	
+	<bean name="application05" class="acme.entities.applications.Application">
+		<property name="ticker" value="TEC-20-000007" />
+		<property name="creationDate" value="2020/08/8 17:38" />
+		<property name="statement" value="¡Vamos a por todas!" />
+		<property name="investmentOffer">
+			<ref bean="money06"/>
+		</property>
+		<property name="status" value="ACCEPTED" />
+		<property name="investment" ref="investmentRound01" />
+		<property name="investor" ref="investor03Investor" />
+	</bean>
+	
 	<!-- Forums -->
 	
 	<bean name="forum01" class="acme.entities.forums.Forum">
@@ -849,6 +891,7 @@
 		<property name="participants">
 			<list>
 				<ref bean="investor01UserAccount"/>
+				<ref bean="investor03UserAccount"/>
 			</list>
 		</property>
 	</bean>
