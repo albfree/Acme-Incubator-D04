@@ -846,13 +846,6 @@
 	<bean name="forum01" class="acme.entities.forums.Forum">
 		<property name="title" value="Foro del Investment Round: TEC-20-000001"/>
 		<property name="investment" ref="investmentRound01" />
-		<property name="messages">
-			<list>
-				<ref bean="message01Forum01"/>
-				<ref bean="message02Forum01"/>
-				<ref bean="message03Forum01"/>
-			</list>
-		</property>
 		<property name="participants">
 			<list>
 				<ref bean="investor01UserAccount"/>
