@@ -427,7 +427,7 @@
 	
 	<bean name="entrepreneur01Entrepreneur" class="acme.entities.roles.Entrepreneur">
 		<property name="startUpName" value="Freeline" />
-		<property name="sector" value="Videogames" />
+		<property name="sector" value="Technology" />
 		<property name="qualificationRecord" value="Excellent!" />
 		<property name="skillsRecord" value="C++, C#, Unreal Engine 5" />
 		<property name="userAccount" ref="entrepreneur01UserAccount"/>
@@ -458,7 +458,7 @@
 	
 	<bean name="entrepreneur02Entrepreneur" class="acme.entities.roles.Entrepreneur">
 		<property name="startUpName" value="Cars Marx" />
-		<property name="sector" value="Cars" />
+		<property name="sector" value="Science" />
 		<property name="qualificationRecord" value="Perfect!" />
 		<property name="skillsRecord" value="Build cars" />
 		<property name="userAccount" ref="entrepreneur02UserAccount"/>
@@ -487,7 +487,7 @@
 	
 	<bean name="investor01Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="Mclaren, Inc."/>
-		<property name="activitySector" value="Sport Cars"/>
+		<property name="activitySector" value="Business"/>
 		<property name="profile" value="CEO"/>
 		<property name="userAccount" ref="investor01UserAccount"/>
 	</bean>
@@ -517,7 +517,7 @@
 	
 	<bean name="investor02Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="Aston Martin, Inc."/>
-		<property name="activitySector" value="Sport Cars"/>
+		<property name="activitySector" value="Business"/>
 		<property name="profile" value="Designer"/>
 		<property name="userAccount" ref="investor02UserAccount"/>
 	</bean>
@@ -661,7 +661,7 @@
 	<!-- Investment rounds -->
 	
 	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="VID-20-000001" />
+		<property name="ticker" value="TEC-20-000001" />
 		<property name="creationDate" value="2020/08/06 16:00" />
 		<property name="kindOfRound" value="ANGEL" />
 		<property name="title" value="God of War II" />
@@ -680,7 +680,7 @@
 	</bean>
 	
 	<bean name="investmentRound02" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="VID-20-000002" />
+		<property name="ticker" value="TEC-20-000002" />
 		<property name="creationDate" value="2020/08/07 17:00" />
 		<property name="kindOfRound" value="SERIES-A" />
 		<property name="title" value="Red Dead Redemption 3" />
@@ -700,7 +700,7 @@
 	</bean>
 	
 	<bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="CAR-20-000003" />
+		<property name="ticker" value="SCI-20-000003" />
 		<property name="creationDate" value="2020/08/10 18:00" />
 		<property name="kindOfRound" value="SERIES-C" />
 		<property name="title" value="Amazon 2.0" />
@@ -718,7 +718,7 @@
 	</bean>
 	
 	<bean name="investmentRound04" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="CAR-20-000004" />
+		<property name="ticker" value="SCI-20-000004" />
 		<property name="creationDate" value="2020/08/17 18:00" />
 		<property name="kindOfRound" value="ANGEL" />
 		<property name="title" value="Facebook 2.0" />
@@ -794,15 +794,97 @@
 	<!-- Applications to Investment rounds -->
 	
 	<bean name="application01" class="acme.entities.applications.Application">
-		<property name="ticker" value="SPO-20-000003" />
-		<property name="creationDate" value="2020/08/07 16:30" />
+		<property name="ticker" value="BUS-20-000003" />
+		<property name="creationDate" value="2020/08/07 16:00" />
 		<property name="statement" value="Vamos a ser los próximos mil-millonarios." />
+		<property name="investmentOffer">
+			<ref bean="money03"/>
+		</property>
+		<property name="status" value="ACCEPTED" />
+		<property name="investment" ref="investmentRound01" />
+		<property name="investor" ref="investor01Investor" />
+	</bean>
+	
+	<bean name="application02" class="acme.entities.applications.Application">
+		<property name="ticker" value="BUS-20-000004" />
+		<property name="creationDate" value="2020/08/08 16:30" />
+		<property name="statement" value="Vamos a por todas." />
+		<property name="investmentOffer">
+			<ref bean="money04"/>
+		</property>
+		<property name="status" value="PENDING" />
+		<property name="investment" ref="investmentRound03" />
+		<property name="investor" ref="investor01Investor" />
+	</bean>
+	
+	<bean name="application03" class="acme.entities.applications.Application">
+		<property name="ticker" value="BUS-20-000005" />
+		<property name="creationDate" value="2020/08/9 16:36" />
+		<property name="statement" value="Conseguiremos algo grande." />
 		<property name="investmentOffer">
 			<ref bean="money03"/>
 		</property>
 		<property name="status" value="PENDING" />
 		<property name="investment" ref="investmentRound01" />
-		<property name="investor" ref="investor01Investor" />
+		<property name="investor" ref="investor02Investor" />
+	</bean>
+	
+	<bean name="application04" class="acme.entities.applications.Application">
+		<property name="ticker" value="BUS-20-000006" />
+		<property name="creationDate" value="2020/08/10 16:39" />
+		<property name="statement" value="Convertiremos el proyecto en algo fascinante." />
+		<property name="investmentOffer">
+			<ref bean="money05"/>
+		</property>
+		<property name="status" value="ACCEPTED" />
+		<property name="investment" ref="investmentRound03" />
+		<property name="investor" ref="investor02Investor" />
+	</bean>
+	
+	<!-- Forums -->
+	
+	<bean name="forum01" class="acme.entities.forums.Forum">
+		<property name="title" value="Foro del Investment Round: TEC-20-000001"/>
+		<property name="investment" ref="investmentRound01" />
+		<property name="messages">
+			<list>
+				<ref bean="message01Forum01"/>
+				<ref bean="message02Forum01"/>
+				<ref bean="message03Forum01"/>
+			</list>
+		</property>
+		<property name="participants">
+			<list>
+				<ref bean="investor01UserAccount"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="message01Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="Mensaje 01"/>
+		<property name="creationMoment" value="2020/07/10 12:33"/>
+		<property name="tags" value=""/>
+		<property name="body" value="Cuerpo del primer mensaje."/>
+		<property name="forum" ref="forum01" />
+		<property name="user" ref="investor01UserAccount" />
+	</bean>
+	
+	<bean name="message02Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="Mensaje 02"/>
+		<property name="creationMoment" value="2020/07/12 13:43"/>
+		<property name="tags" value="tag1"/>
+		<property name="body" value="Cuerpo del segundo mensaje."/>
+		<property name="forum" ref="forum01" />
+		<property name="user" ref="entrepreneur01UserAccount" />
+	</bean>
+	
+	<bean name="message03Forum01" class="acme.entities.messages.Message">
+		<property name="title" value="Mensaje 03"/>
+		<property name="creationMoment" value="2020/07/18 22:01"/>
+		<property name="tags" value="tag1, tag2"/>
+		<property name="body" value="Cuerpo del tercer mensaje."/>
+		<property name="forum" ref="forum01" />
+		<property name="user" ref="investor01UserAccount" />
 	</bean>
 	
 </beans>

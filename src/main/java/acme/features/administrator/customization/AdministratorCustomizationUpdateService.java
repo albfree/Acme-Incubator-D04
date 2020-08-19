@@ -64,11 +64,12 @@ public class AdministratorCustomizationUpdateService implements AbstractUpdateSe
 		assert errors != null;
 
 		boolean isLessHundred = true;
-		if (!errors.hasErrors("threshold")) {
 
+		if (!errors.hasErrors("threshold")) {
 			isLessHundred = request.getModel().getDouble("threshold") <= 100.0;
 			errors.state(request, isLessHundred, "threshold", "acme.validation.customization.threshold.max");
 		}
+
 	}
 
 	@Override
