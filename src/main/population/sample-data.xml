@@ -876,7 +876,7 @@
 		<property name="creationDate" value="2020/08/8 17:38" />
 		<property name="statement" value="¡Vamos a por todas!" />
 		<property name="investmentOffer">
-			<ref bean="money06"/>
+			<ref bean="money04"/>
 		</property>
 		<property name="status" value="ACCEPTED" />
 		<property name="investment" ref="investmentRound01" />
