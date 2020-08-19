@@ -8,6 +8,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -23,9 +24,11 @@ public class EscobarBulletin extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				author;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				text;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -34,9 +37,11 @@ public class EscobarBulletin extends DomainEntity {
 
 	@URL
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				link;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				country;
 
 }

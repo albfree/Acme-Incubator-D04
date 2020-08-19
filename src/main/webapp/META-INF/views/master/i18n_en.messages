@@ -42,23 +42,23 @@ master.menu.anonymous.joslobtro-favourite-link = joslobtro's favourite link
 
 # master.menu.anonymous.bulletin #######################################################
 
-master.menu.bulletins.list = Bulletins list
+master.menu.bulletins.list = Bulletins' list
 master.menu.bulletins.create = Create a bulletin
 
 master.menu.anonymous.guerrero-bulletin.list = Guerrero's bulletins list
-master.menu.anonymous.guerreroBulletin.create =  Create a Guerrero bulletin
+master.menu.anonymous.guerreroBulletin.create =  New Guerrero's bulletin
 
-master.menu.anonymous.escobar-bulletin.list = EscobarBulletins' List
+master.menu.anonymous.escobar-bulletin.list = EscobarBulletins' list
 master.menu.anonymous.escobar-bulletin.create = New EscobarBulletin
 
-master.menu.bulletins.horrillo-bulletin.list = Horrillo bulletin
-master.menu.bulletins.horrillo-bulletin.create = New Horrillo bulletin
+master.menu.bulletins.horrillo-bulletin.list = HorrilloBulletins' list
+master.menu.bulletins.horrillo-bulletin.create = New HorrilloBulletin
 
-master.menu.anonymous.perezBulletin.list = List Brayan's bulletins
-master.menu.anonymous.perezBulletin.create = Create Brayan's bulletin
+master.menu.anonymous.perezBulletin.list = Perez's bulletins list
+master.menu.anonymous.perezBulletin.create = New Perez's bulletin
 
-master.menu.anonymous.lobatoBulletin.list = List of lobatoBulletins
-master.menu.anonymous.lobatoBulletin.create = Create lobatoBulletin
+master.menu.anonymous.lobatoBulletin.list = LobatoBulletins' list
+master.menu.anonymous.lobatoBulletin.create = New LobatoBulletin
 
 # master.menu.administrator ###################################################
 
@@ -82,10 +82,17 @@ master.menu.administrator.technology-record.create = Create Technology Record
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
+master.menu.authenticated.investment-round.list = Investment rounds' list
 master.menu.authenticated.notice.list = Notice's list
 master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.overture.list = List of overtures
 master.menu.authenticated.inquiry.list = List of inquiries
+master.menu.authenticated.forum.list = Forums in which I participate
+
+# master.menu.investor ###################################################
+
+master.menu.investor = Investor
+master.menu.investor.application.list-mine = My applications
 
 # master.menu.provider ########################################################
 
@@ -96,6 +103,18 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.entrepreneur ###################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.investment-round.list-mine = My investment rounds' list
+master.menu.entrepreneur.application.list-mine = Applications to my investment rounds
+
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment-round.list-mine = Investment rounds with my accounting records
+master.menu.bookkeeper.investment-round.list-not-mine = Investment rounds without my accounting records
 
 # master.menu.user-account ####################################################
 

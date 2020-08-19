@@ -8,6 +8,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -23,9 +24,11 @@ public class GuerreroBulletin extends DomainEntity {
 	// Atributos de la entidad
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				name;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				quote;
 
 	@Temporal(TemporalType.TIMESTAMP)
