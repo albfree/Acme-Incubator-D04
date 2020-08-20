@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 import acme.entities.forums.Forum;
 import acme.framework.entities.DomainEntity;
@@ -26,15 +27,18 @@ public class Message extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				title;
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				creationMoment;
 
+	@Size(max = 255)
 	private String				tags;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				body;
 
 	@NotNull

@@ -17,6 +17,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -50,9 +51,11 @@ public class InvestmentRound extends DomainEntity {
 	private String						kindOfRound;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String						title;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String						description;
 
 	@NotNull
@@ -60,6 +63,7 @@ public class InvestmentRound extends DomainEntity {
 	private Money						amount;
 
 	@URL
+	@Size(max = 255)
 	private String						optionalLink;
 
 	@OneToMany(mappedBy = "investment", cascade = CascadeType.ALL)

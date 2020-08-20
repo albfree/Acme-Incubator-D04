@@ -14,6 +14,7 @@ package acme.entities.roles;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import acme.framework.entities.UserRole;
 import lombok.Getter;
@@ -31,12 +32,15 @@ public class Investor extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				firmName;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				activitySector;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				profile;
 
 	// Derived attributes -----------------------------------------------------

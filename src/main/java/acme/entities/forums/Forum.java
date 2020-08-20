@@ -8,6 +8,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -26,6 +27,7 @@ public class Forum extends DomainEntity {
 	private static final long				serialVersionUID	= 1L;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String							title;
 
 	@Valid

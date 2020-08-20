@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Bookkeeper;
@@ -28,16 +29,18 @@ public class AccountingRecord extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				title;
 
 	@NotNull
-	private StatusAccounting				status;
+	private StatusAccounting	status;
 
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				creationMoment;
 
 	@NotBlank
+	@Size(min = 1, max = 255)
 	private String				body;
 
 	@NotNull
