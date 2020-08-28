@@ -17,6 +17,7 @@
 
 <acme:form readonly="true">
 
+	<acme:form-textbox code="entrepreneur.application.form.label.investment-ticker" path="investment.ticker"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker"/>
 	<acme:form-moment code="entrepreneur.application.form.label.creation-date" path="creationDate"/>
 	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement"/>
